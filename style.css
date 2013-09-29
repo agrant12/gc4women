@@ -1,0 +1,80 @@
+/*
+Theme Name: GC4Women WP 3.0
+Theme URI: http://gc4women.org
+Description: Custom theme developed for GC4Women, non-profit organization
+Author: Alvin Grant
+Author URI: http://alvingrant.com
+Version: 1.0
+*/
+
+
+/* Universal Styles */
+
+body{   
+    background: #ffffff;
+    font-family: Arial, Helvetica, Georgia, Sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+footer{
+    clear: both;
+    background: #ccc;
+    height: 50px;
+    padding: 10px;
+}
+
+#wrapper{
+    background: #fff;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: left;
+    width: 750px;
+}
+
+/* Navigation */
+
+.nav ul li{
+    float: left;
+    list-style: none;
+}
+
+.nav ul li a{
+    margin: 5px;
+}
+ 
+a:link, a:visited{
+    text-decoration: none; 
+    color: #000000;
+}
+ 
+a:hover{
+    color: #5f5f5f;
+}
+ 
+h1 {
+    font-size: 54px;
+}
+ 
+h3 {
+    font-size: 24px;
+}
+ 
+#header{
+    width: 750px;
+    height: 100px;
+}
+ 
+#blog{
+    float: left;
+    width: 520px;
+    padding: 0 10px 10px 10px;
+}
+ 
+.sidebar{
+    float: left;
+    width: 200px;
+    margin: 0 0 0 10px;
+    font-size: 14px;
+    list-style: none;
+}
