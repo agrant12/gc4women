@@ -19,8 +19,11 @@
 </head>
 <body>
 	<div id="wrapper">
-		<div id="header">
-			<h1><a href="<?php echo get_option('home'); ?>"></a><?php bloginfo('name'); ?></h1>
-		</div>
+		<header>
+			<h1 id="site-title"><a href="<?php echo get_option('home'); ?>"></a><?php bloginfo('name'); ?></h1>
+		</header>
+		<?php get_search_form(); ?>
+		<nav>
+			<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_class' => 'nav', 'theme_location' => 'primary' ) ); ?>
+		</nav>
 		
-		<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_class' => 'nav', 'theme_location' => 'primary-menu' ) ); ?>

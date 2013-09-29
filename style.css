@@ -17,39 +17,92 @@ body{
     padding: 0;
 }
 
+header{
+    width: 960px;
+    height: 100px;
+}
+
 footer{
+    background: #A7AAAC;
     clear: both;
-    background: #ccc;
     height: 50px;
+    margin: 0 auto;
     padding: 10px;
+    width: 960px;
 }
 
 #wrapper{
     background: #fff;
     margin: 0 auto;
-    padding: 20px;
     text-align: left;
-    width: 750px;
+    width: 960px;
+}
+
+/* Branding */
+#site-title{
+    background: url(images/gc4w_logo.png) no-repeat;
+    float: left;
+    height: 164px;
+    margin-left: 10px;
+    margin-top: 15px;
+    text-indent: -5000px;
+    width: 222px;
 }
 
 /* Navigation */
 
-.nav ul li{
+.menu-navigation-container{
+    display: block;
+    float: right;
+    margin: 0 auto 6px;
+    width: 670px;
+}
+
+.menu-navigation-container ul{
+    font-size: 13px;
+    font-weight: normal;
+    list-style: none;
+    margin: 0 0 0 -0.8125em;
+    padding-left: 7px;
+}
+
+.menu-navigation-container ul li{
     float: left;
     list-style: none;
 }
 
-.nav ul li a{
-    margin: 5px;
+.menu-navigation-container ul li a{
+    color: #A7AAAC;
+    display: block;
+    font-size: 13px;
+    line-height: 3.333em;
+    padding: 0 0.3125em;
+    text-decoration: none;
+    text-transform: uppercase;
 }
- 
-a:link, a:visited{
-    text-decoration: none; 
-    color: #000000;
+
+.menu-navigation-container li:hover > a,
+.menu-navigation-container a:focus{
+    color: #FBAD1E;
 }
- 
-a:hover{
-    color: #5f5f5f;
+
+.menu-navigation-container .current-menu-item > a,
+.menu-navigation-container .current-menu-ancestor > a,
+.menu-navigation-container .current_page_item > a,
+.menu-navigation-container .current_page_ancestor > a {
+    color: #FBAD1E;
+}
+
+/* Footer Style */
+
+footer a{
+    color: #666;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 2.2em;
+    padding: 2.2em 0.5em;
+    text-align: center;
+    text-decoration: none;
 }
  
 h1 {
@@ -58,11 +111,6 @@ h1 {
  
 h3 {
     font-size: 24px;
-}
- 
-#header{
-    width: 750px;
-    height: 100px;
 }
  
 #blog{
