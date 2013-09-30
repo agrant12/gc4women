@@ -21,9 +21,8 @@
 	<div id="wrapper">
 		<header>
 			<h1 id="site-title"><a href="<?php echo get_option('home'); ?>"></a><?php bloginfo('name'); ?></h1>
-		</header>
-		<?php get_search_form(); ?>
-		<nav>
+			<div id="search"><?php get_search_form(); ?></div>
+			<div id="site-description"><?php bloginfo( 'description' ); ?></div>
 			<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'menu_class' => 'nav', 'theme_location' => 'primary' ) ); ?>
-		</nav>
+		</header>
 		

@@ -49,13 +49,23 @@ footer{
     width: 222px;
 }
 
+#site-description{
+    color: #FBAD1E;
+    float: right;
+    font-size: 31px;
+    left: 140px;
+    margin-bottom: 20px;
+    margin-top: 65px;
+    position: relative;
+}
+
 /* Navigation */
 
 .menu-navigation-container{
     display: block;
     float: right;
-    margin: 0 auto 6px;
-    width: 670px;
+    margin: 10px auto 6px;
+    width: 560px;
 }
 
 .menu-navigation-container ul{
@@ -91,6 +101,37 @@ footer{
 .menu-navigation-container .current_page_item > a,
 .menu-navigation-container .current_page_ancestor > a {
     color: #FBAD1E;
+}
+
+/* Search */
+
+#searchform{
+    float: right;
+    width: 150px;
+}
+
+header #s{
+    float: right;
+    -webkit-transition-duration: 400ms;
+    -webkit-transition-property: width, background;
+    -webkit-transition-timing-function: ease;
+    -moz-transition-duration: 400ms;
+    -moz-transition-property: width, background;
+    -moz-transition-timing-function: ease;
+    -o-transition-duration: 400ms;
+    -o-transition-property: width, background;
+    -o-transition-timing-function: ease;
+    width: 130px;
+}
+
+#search label{
+    display: none;
+}
+
+#searchsubmit{
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
 }
 
 /* Footer Style */
