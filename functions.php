@@ -14,30 +14,30 @@
 	//Widget enabled footer
 	function gc4w_widget_init(){
 		register_sidebar(array(
-		'name' => 'Footer Siderbar 1',
+		'name' => 'Footer Sidebar 1',
 		'id' => 'footer-sidebar-1',
 		'description' => 'Appears in the footer area',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title',
+		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>'
 		));
 		register_sidebar(array(
-			'name' => 'Footer Siderbar 2',
+			'name' => 'Footer Sidebar 2',
 			'id' => 'footer-sidebar-2',
 			'description' => 'Appears in the footer area',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title',
+			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>'
 		));
 		register_sidebar(array(
-			'name' => 'Footer Siderbar 3',
+			'name' => 'Footer Sidebar 3',
 			'id' => 'footer-sidebar-3',
 			'description' => 'Appears in the footer area',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
-			'before_title' => '<h3 class="widget-title',
+			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>'
 		));
 	}

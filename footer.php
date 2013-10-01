@@ -22,5 +22,6 @@
 			}
 		?>
 	</div>
-	<a href="#">Copyright &copy 2013 - GC4Women - All Rights Reserved.</a>
+	<div class="clear"></div>
+	<a href="#" id="copyright">Copyright &copy 2013 - GC4Women - All Rights Reserved.</a>
 </footer>

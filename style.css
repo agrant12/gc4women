@@ -25,9 +25,8 @@ header{
 footer{
     background: #A7AAAC;
     clear: both;
-    height: 50px;
     margin: 0 auto;
-    padding: 10px;
+    padding: 20px;
     width: 960px;
 }
 
@@ -37,6 +36,17 @@ footer{
     text-align: left;
     width: 960px;
 }
+
+/* Universal font styles */
+
+h1{
+    font-size: 54px;
+}
+ 
+h3{
+    font-size: 24px;
+}
+ 
 
 /* Branding */
 #site-title{
@@ -136,6 +146,10 @@ header #s{
 
 /* Footer Style */
 
+#copyright{
+    margin-left: 45px;
+}
+
 footer a{
     color: #666;
     font-size: 12px;
@@ -145,13 +159,55 @@ footer a{
     text-align: center;
     text-decoration: none;
 }
- 
-h1 {
-    font-size: 54px;
+
+footer h3{
+    color: #666666;
+    font-size: 16px;
 }
- 
-h3 {
-    font-size: 24px;
+
+footer li{
+    line-height: 0.9;
+    list-style: none;
+}
+
+footer p{
+    color: #fff;
+    font-size: 12px;
+}
+
+footer ul{
+    padding: 0;
+}
+
+#footer-sidebar-1{
+    float: left;
+    margin-bottom: 25px;
+    margin-left: 50px;
+    width: 250px;
+}
+
+#footer-sidebar-1 a{
+    color: #fff;
+    line-height: 0;
+    padding: 0;
+}
+
+#footer-sidebar-2{
+    float: left;
+    font-weight: bold;
+    list-style: none;
+    width: 250px;
+}
+
+#footer-sidebar-3{
+    float: left;
+    margin-left: 50px;
+    width: 250px;
+} 
+/* Misc */
+
+.clear{
+    clear: both;
 }
  
 #blog{
