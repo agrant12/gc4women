@@ -1,12 +1,7 @@
 <?php 
 
-	//Add support for Wordpress custom menus
-	add_action('init', 'register_my_menu');
-
-	//Register area for custom menu
-	function register_my_menu(){
-		register_nav_menu('primary', __('Primary Menu') );
-	}
+	// Use wp_nav_menu
+	register_nav_menu( 'primary', __( 'Primary Menu', 'gc4women' ) );
 
 	//Enable post theumbnails
 	add_theme_support('post-thumbnails');
@@ -16,6 +11,38 @@
 	if ( function_exists('register_sidebar') )
 		register_sidebar();
 
+	//Widget enabled footer
+	function gc4w_widget_init(){
+		register_sidebar(array(
+		'name' => 'Footer Sidebar 1',
+		'id' => 'footer-sidebar-1',
+		'description' => 'Appears in the footer area',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>'
+		));
+		register_sidebar(array(
+			'name' => 'Footer Sidebar 2',
+			'id' => 'footer-sidebar-2',
+			'description' => 'Appears in the footer area',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		));
+		register_sidebar(array(
+			'name' => 'Footer Sidebar 3',
+			'id' => 'footer-sidebar-3',
+			'description' => 'Appears in the footer area',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		));
+	}
+	add_action('widgets_init','gc4w_widget_init')
+
 	//Custom Backgrounds
-	add_theme_support('custom-background');
+	//add_theme_support('custom-background');
 ?>
