@@ -19,7 +19,6 @@ body{
 
 header{
     width: 960px;
-    height: 100px;
 }
 
 footer{
@@ -27,7 +26,7 @@ footer{
     clear: both;
     margin: 0 auto;
     padding: 20px;
-    width: 960px;
+    width: 940px;
 }
 
 #wrapper{
@@ -144,6 +143,34 @@ header #s{
     clip: rect(1px, 1px, 1px, 1px);
 }
 
+/* Main Content */
+
+#main{
+    float: left;
+    margin: 0 0 20px 0;
+    padding: 0 0 0 20px;
+    width: 710px;
+}
+
+/* Sidebar */
+
+.sidebar{
+    float: left;
+    font-size: 14px;
+    list-style: none;
+    margin: 0 0 20px 0;
+    padding: 0 0 0 10px;
+    width: 210px;
+}
+
+.sidebar h2{
+    font-size: 16px;
+}
+
+.sidebar table{
+    width: 100%;
+}
+
 /* Footer Style */
 
 #copyright{
@@ -208,18 +235,4 @@ footer ul{
 
 .clear{
     clear: both;
-}
- 
-#blog{
-    float: left;
-    width: 520px;
-    padding: 0 10px 10px 10px;
-}
- 
-.sidebar{
-    float: left;
-    width: 200px;
-    margin: 0 0 0 10px;
-    font-size: 14px;
-    list-style: none;
 }
