@@ -1,35 +1,55 @@
 <?php
-    /** Step 2 (from text above). */
-    add_action('admin_menu', 'gc4w_plugin_menu' );
 
-    /** Step 1. */
-    function gc4w_plugin_menu() {
-        add_options_page( 'GC4W Plugin Options', 'GC4W Settings', 'manage_options', 'my-unique-identifier', 'gc4w_plugin_options' );
-    }
+/*
+Plugin Name: GC4W Options Settings
+Version: 1.0
+Plugin URI: http://gc4women.org
+Description: Set site settings
+Author: Alvin Grant
+Author URI: http://alvingrant.com
+*/
 
-    /** Step 3. */
-    function gc4w_plugin_options() {
-        if ( !current_user_can( 'manage_options' ) )  {
-            wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
-        }
-        ?>
+add_action('admin_menu', 'gc4w_admin_add_page');
+
+function gc4w_admin_add_page() {
+    add_options_page('GC4W Page', 'GC4W Menu', 'manage_options', 'gc4w', 'gc4w_options_page');
+}
+
+function gc4w_options_page(){
+    ?>
+    <div>
+        <h2>GC4W Settings</h2>
         <form action="options.php" method="post">
-            <?php settings_fields('gc4w_settings'); ?>
-            <?php do_settings_sections('gc4w-settings'); ?>
-            <p><input name="Submit" type="submit" value="Save Changes" /></p>
+            <?php settings_fields('gc4w_options'); ?>
+            <?php do_settings_sections('gc4w'); ?>
+            <br />
+            <input name="Submit" type="submit" value="<?php esc_attr_e('Save Changes'); ?>" />
         </form>
-        <?php
-    }
-    function admin_init(){
-        register_settings('gc4w_settings', 'gc4w_settings');
+    </div>
+    <?php
+}
 
-        //Social Feed section
-        add_settings_section('gc4w_settings_tw', 'Social Feeds', array($this, 'section_gc4w_settings'), 'gc4w_settings');
+add_action('admin_init', 'gc4w_admin_init');
 
-        add_settings_field('twitter_api', 'Twitter Api Key', array($this, 'twitter_api_gc4w'), 'gc4w-settings', 'gc4w_settings_twitter');
-    }
+function gc4w_admin_init(){
+    register_setting('gc4w_options', 'gc4w_options', 'gc4w_options_validate');
+    add_settings_section('gc4w_main', 'API Settings', 'gc4w_section_text', 'gc4w');
+    add_settings_field('gc4w_text_string', 'Twitter API Key', 'twitter_setting_string', 'gc4w', 'gc4w_main');
+}
 
-    function twitter_api_gc4w(){
-        echo '<input type="text" size="2" value"'.self::get_setting('twitter_api').'" id="twitter_api" name="gc4w_settings[twitter_api]" />';
+function gc4w_section_text(){
+    echo '<p><strong>Supply your API Keys</strong></p>';
+}
+
+function twitter_setting_string(){
+    $options = get_option('gc4w_options');
+    echo "<input id='twitter_text_string' name='gc4w_options[text_string]' size='40' type='text' value='{$options['text_string']}' />";
+}
+
+function gc4w_options_validate($input){
+    $newinput['text_string'] = trim($input['text_string']);
+    if(!preg_match('/^[a-z0-9]{32}$/i', $newinput['text_string'])) {
+        $newinput['text_string'] = '';
     }
-?>
+    return $newinput;
+}
