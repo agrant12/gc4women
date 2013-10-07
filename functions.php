@@ -5,6 +5,7 @@
 
 	//Register custom plugins
 	include(dirname(__FILE__).'/plugins/site-settings/site-settings.php');
+	include(dirname(__FILE__).'/plugins/post_types/post_types.php');
 
 	//Enable post theumbnails
 	add_theme_support('post-thumbnails');
