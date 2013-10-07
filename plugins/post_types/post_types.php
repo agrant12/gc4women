@@ -9,7 +9,7 @@ Author: Alvin Grant
 Author URI: http://alvingrant.com
 */
 
-function my_custom_post_spotlight() {
+function my_spotlight() {
 	$labels = array(
 		'name'               => _x( 'Spotlight', 'post type general name' ),
 		'singular_name'      => _x( 'Spotlight', 'post type singular name' ),
@@ -35,6 +35,6 @@ function my_custom_post_spotlight() {
 	);
 	register_post_type( 'spotlight', $args );	
 }
-add_action( 'init', 'my_custom_post_spotlight' );
+add_action( 'init', 'my_spotlight' );
 
 ?>
