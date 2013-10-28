@@ -23,5 +23,6 @@
 		?>
 	</div>
 	<div class="clear"></div>
-	<a href="#" id="copyright">Copyright &copy 2013 - GC4Women - All Rights Reserved.</a>
+	<span>The Global Connections for Women Foundation is a 501(c)(3) not-for-profit organization</span><br />
+	<span>Copyrights © 2013 GC4W Foundation | Our<a href="#">Privacy Policy</a> </span>
 </footer>
