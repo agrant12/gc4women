@@ -12,13 +12,13 @@ Version: 1.0
 
 body{   
     background: #ffffff;
-    font-family: Arial, Helvetica, Georgia, Sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 header{
-    margin-top: 50px;
+    margin-top: 30px;
     width: 960px;
 }
 
@@ -26,8 +26,8 @@ footer{
     background: #A7AAAC;
     clear: both;
     margin: 0 auto;
-    padding: 20px;
-    width: 940px;
+    padding:  1.625em 0.5% 1.625em;
+    width: 950px;
 }
 
 #wrapper{
@@ -39,6 +39,21 @@ footer{
 
 /* Universal font styles */
 
+a {
+    color: #1982d1;
+    text-decoration: none;
+}
+
+a:focus,
+a:active,
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h4, h5, h6, p{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 h1{
     font-size: 2em;
 }
@@ -46,15 +61,136 @@ h1{
 h3{
     font-size: 24px;
 }
- 
+/* Text Elements */
+
+p{
+    margin-bottom: 1.625em;
+}
+
+ul, ol{
+   
+}
+
+ul{
+    list-style: square;
+}
+
+ol{
+    list-style-type: decimal;
+}
+
+ol ol{
+    list-style: upper-alpha;
+}
+
+ol ol ol{
+    list-style: lower-roman;
+}
+
+ol ol ol ol{
+    list-style: lower-alpha;
+}
+
+ul ul, ol ol, ul ol, ol ul{
+    margin-bottom: 0;
+}
+
+dl{
+    margin: 0 1.625em;
+}
+
+dt{
+    font-weight: bold;
+}
+
+dd{
+    margin-bottom: 1.625em;
+}
+
+strong{
+    font-weight: bold;
+}
+
+cite, em, i{
+    font-style: italic;
+}
+
+blockquote{
+    font-family: Georgia, "Bitstream Charter", serif;
+    font-style: italic;
+    font-weight: normal;
+    margin: 0 3em;
+}
+
+blockquote em, blockquote i, blockquote cite{
+    font-style: normal;
+}
+
+blockquote cite{
+    color: #666;
+    font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+pre{
+    background: #f4f4f4;
+    font: 13px "Courier 10 Pitch", Courier, monospace;
+    line-height: 1.5;
+    margin-bottom: 1.625em;
+    overflow: auto;
+    padding: 0.75em 1.625em;
+}
+
+code, kbd, samp, var{
+    font: 13px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr, acronym, dfn{
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+
+address{
+    display: block;
+    margin: 0 0 1.625em;
+}
+
+ins{
+    background: #fff9c0;
+    text-decoration: none;
+}
+
+sup,
+sub{
+    font-size: 10px;
+    height: 0;
+    line-height: 1;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup{
+    bottom: 1ex;
+}
+
+sub{
+    top: .5ex;
+}
+
+small{
+    font-size: smaller;
+}
 
 /* Branding */
+
 #site-title{
     background: url(images/gc4w_logo.png) no-repeat;
     float: left;
     height: 164px;
     margin-left: 10px;
-    margin-top: 15px;
+    margin: 15px 0 0;
     text-indent: -5000px;
     width: 222px;
 }
@@ -64,8 +200,7 @@ h3{
     float: right;
     font-size: 31px;
     left: 140px;
-    margin-bottom: 20px;
-    margin-top: 65px;
+    margin-top: 85px;
     position: relative;
 }
 
@@ -75,7 +210,7 @@ h3{
     display: block;
     float: right;
     margin: 10px auto 6px;
-    width: 510px;
+    width: 483px;
 }
 
 .menu-navigation-container ul{
@@ -132,8 +267,12 @@ header #s{
     -o-transition-duration: 400ms;
     -o-transition-property: width, background;
     -o-transition-timing-function: ease;
-    margin-right: 10px;
-    width: 230px;
+    width: 150px;
+}
+
+header #s:focus {
+    background-color: #f9f9f9;
+    width: 250px;
 }
 
 #search label{
@@ -150,8 +289,6 @@ header #s{
 
 #main{
     float: left;
-    margin: 0 0 20px 0;
-    padding: 0 0 0 20px;
     width: 960px;
 }
 
@@ -181,7 +318,6 @@ header #s{
 }
 
 footer a{
-    color: #666;
     font-size: 12px;
     font-weight: bold;
     line-height: 2.2em;
@@ -210,9 +346,6 @@ footer span{
     color: #fff;
     font-size: 12px;
     font-weight: bold;
-    left: 45px;
-    line-height: 2.2em;
-    margin: 50px 0 45px 0;
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -235,7 +368,6 @@ footer ul{
 }
 
 #footer-sidebar-1 a{
-    color: #fff;
     line-height: 0;
     padding: 0;
 }
@@ -251,7 +383,43 @@ footer ul{
     float: left;
     margin-left: 50px;
     width: 250px;
+}
+
+#footer-sidebar-4{
+    float: left;
 } 
+
+.widget-title{
+    color: #fff;
+    font-weight: normal;
+}
+
+/* Twitter Styling */
+
+.follow-button{
+    position: relative;
+    background-color: #f8f8f8;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#dedede));
+    background-image: -moz-linear-gradient(top,#fff,#dedede);
+    background-image: -o-linear-gradient(top,#fff,#dedede);
+    background-image: -ms-linear-gradient(top,#fff,#dedede);
+    background-image: linear-gradient(top,#fff,#dedede);
+    border: #ccc solid 1px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    color: #333;
+    font-weight: bold;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    height: 18px;
+    max-width: 98%;
+    overflow: hidden;
+}
 /* Misc */
 
 .clear{
@@ -263,8 +431,8 @@ footer ul{
 #carousel{
     float: left;
     height: 320px;
-    margin-bottom: 25px;
-    width: 690px;
+    margin-bottom: 15px;
+    width: 705px;
 }
 
 
@@ -273,16 +441,20 @@ footer ul{
     float: left;
     height: 235px;
     padding: 5px 5px;
-    margin: 0 10px 10px 0;
-    width: 450px;
+    margin: 0 26px 10px 0;
+    width: 455px;
 }
 
 #events .cal{
     float: right;
-    padding: 5px 8px 5px 5px;
+    padding: 5px 10px 5px 5px;
     text-align: right;
     text-decoration: none;
     width: 100%;
+}
+
+#events .cal:hover{
+    text-decoration: underline;
 }
 
 #events h1{
@@ -297,7 +469,7 @@ footer ul{
     float: right;
     font-size: 12px;
     height: 150px;
-    margin: 0px 9px 0 0;
+    margin: 0px 11px 0 0;
     padding: 5px 18px;
     width: 175px;
 }
@@ -352,19 +524,20 @@ footer ul{
 
 #involved{
     background: url(images/get_involved.png);
-    height: 39px;
-    padding: 15px 20px;
-    width: 156px;
+    height: 30px;
+    padding: 19px 17px;
+    width: 162px;
 }
 
 #involved a{
     color: #000;
-    font-size: 21px;
+    font-size: 25px;
+    text-decoration: none;
 }
 
 #involved a:hover{
     color: #037EC2;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 #left_rail{
@@ -376,7 +549,7 @@ footer ul{
     float: left;
     height: 235px;
     padding: 5px 0px;
-    width: 460px;
+    width: 465px;
 }
 
 #spotlight .entry{
@@ -403,13 +576,13 @@ footer ul{
 #spotlight img{
     float: left;
     height: 155px;
-    margin: 0 8px;
+    margin: 0 0 0 15px;
     width: 150px;
 }
 
 #spotlight h1{
     font-size: 16px;
     font-weight: 500;
-    margin: 5px 0 8px 8px;
+    margin: 5px 0 8px 15px;
     text-transform: uppercase;
 }
