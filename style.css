@@ -26,7 +26,7 @@ footer{
     background: #A7AAAC;
     clear: both;
     margin: 0 auto;
-    padding:  1.625em 0.5% 1.625em;
+    padding:  1.625em 0.4% 1.625em;
     width: 950px;
 }
 
@@ -314,7 +314,10 @@ header #s:focus {
 /* Footer Style */
 
 #copyright{
-    margin-left: 45px;
+    color: #666666;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 0 0 25px;
 }
 
 footer a{
@@ -326,6 +329,15 @@ footer a{
     text-decoration: none;
 }
 
+footer .entry-content{
+    color: #fff;
+    font-size: 12px;
+}
+
+footer .entry-content a{
+    color: #666;
+}
+
 footer h3{
     color: #666666;
     font-size: 16px;
@@ -334,6 +346,7 @@ footer h3{
 footer li{
     line-height: 0.9;
     list-style: none;
+    margin: 0 0 15px 0;
 }
 
 footer p{
@@ -342,14 +355,7 @@ footer p{
 }
 
 footer span{
-    clear: right;
-    color: #fff;
-    font-size: 12px;
-    font-weight: bold;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    top: 10px;
+
 }
 
 footer span a{
@@ -359,24 +365,37 @@ footer span a{
 footer ul{
     padding: 0;
 }
+/* Footer Widget 1 */
 
 #footer-sidebar-1{
     float: left;
-    margin-bottom: 25px;
-    margin-left: 50px;
+    margin-left: 20px;
     width: 250px;
 }
 
 #footer-sidebar-1 a{
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: normal;
     line-height: 0;
     padding: 0;
+}
+
+#footer-sidebar-1 a:hover{
+    color: #ffffff;
+}
+
+#footer-sidebar-1 li{
+    line-height: 1;
+    margin-bottom: 8px;
 }
 
 #footer-sidebar-2{
     float: left;
     font-weight: bold;
+    margin-left: 10px;
     list-style: none;
-    width: 250px;
+    width: 300px;
 }
 
 #footer-sidebar-3{
@@ -385,13 +404,21 @@ footer ul{
     width: 250px;
 }
 
-#footer-sidebar-4{
-    float: left;
-} 
+#footer-sidebar-3 a{
+    color: #fff;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+
 
 .widget-title{
-    color: #fff;
-    font-weight: normal;
+    color: #666666;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 /* Twitter Styling */
@@ -417,13 +444,34 @@ footer ul{
     user-select: none;
     cursor: pointer;
     height: 18px;
-    max-width: 98%;
     overflow: hidden;
+    top: 10px;
+    width: 200px;
+}
+
+.time-meta{
+    top: 0;
+}
+
+.time-meta a{
+    color: #3d3d3d;
+}
+
+.from-meta{
+    color: #666666;
+    font-size: 12px;
+    top: 0;
+}
+
+.from-meta a{
+    color: #3d3d3d;
+    margin-left: 1px;
 }
 /* Misc */
 
 .clear{
     clear: both;
+    margin-bottom: 50px;
 }
 
 /* Homepage styling */
@@ -432,7 +480,7 @@ footer ul{
     float: left;
     height: 320px;
     margin-bottom: 15px;
-    width: 705px;
+    width: 706px;
 }
 
 
@@ -469,7 +517,7 @@ footer ul{
     float: right;
     font-size: 12px;
     height: 150px;
-    margin: 0px 11px 0 0;
+    margin: 0px 11px 10px 0;
     padding: 5px 18px;
     width: 175px;
 }

@@ -30,11 +30,9 @@ function my_spotlight() {
 		'description'   => 'Contains spotlight stories',
 		'public'        => true,
 		'menu_position' => 6,
-		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments', 'custom-fields' ),
 		'has_archive'   => true,
 	);
 	register_post_type( 'spotlight', $args );	
 }
 add_action( 'init', 'my_spotlight' );
-
-?>
