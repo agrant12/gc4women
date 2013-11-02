@@ -17,14 +17,14 @@
 		?>
 	</div>
 	<div id="footer-sidebar-3">
-		<h3 class="widget-title">Stay Connected!</h3>
+		<h3 class="widget-title">Sign up for our Newsletter</h3>
 		<form>
-			<input /><br />
-			<input /><br />
+			<input placeholder="Full Name" /><br />
+			<input placeholder="Email" /><br />
 			<button>Sign Up</button>
 		</form>
 
-		<h3 class="widget-title">Contact Us!</h3>
+		<h3 class="widget-title">Connect With Us!</h3>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu </p>
 		<a href="http://gc4w.org">www.gc4w.org</a><br />
 		<a href="mailto:info@gc4w.org">info@gc4w.com</a>

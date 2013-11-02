@@ -210,15 +210,23 @@ small{
     display: block;
     float: right;
     margin: 10px auto 6px;
-    width: 483px;
+    width: 490px;
 }
 
 .menu-navigation-container ul{
+    display: inline-table;
     font-size: 13px;
     font-weight: normal;
     list-style: none;
     margin: 0 0 0 -0.8125em;
     padding-left: 7px;
+    position: relative;
+}
+
+.menu-navigation-container ul:after {
+    clear: both; 
+    content: ""; 
+    display: block;
 }
 
 .menu-navigation-container ul li{
@@ -248,6 +256,26 @@ small{
     color: #FBAD1E;
 }
 
+.menu-navigation-container ul ul{
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+
+.menu-navigation-container ul ul li {
+    float: none;
+    margin-left: 5px; 
+    position: relative;
+}
+
+.menu-navigation-container ul ul li a{
+    padding: 0 3px;
+}
+
+.menu-navigation-container ul li:hover > ul {
+    display: block;
+}
+
 /* Search */
 
 #searchform{
@@ -267,6 +295,7 @@ header #s{
     -o-transition-duration: 400ms;
     -o-transition-property: width, background;
     -o-transition-timing-function: ease;
+    margin-top: 25px;
     width: 150px;
 }
 
@@ -317,14 +346,15 @@ header #s:focus {
     color: #666666;
     font-size: 12px;
     font-weight: bold;
-    margin: 0 0 0 25px;
+    margin: 0 0 50px 25px;
+    position: relative;
+    top: 5px;
 }
 
 footer a{
     font-size: 12px;
     font-weight: bold;
-    line-height: 2.2em;
-    padding: 2.2em 0.5em;
+    line-height: 1.3em;
     text-align: center;
     text-decoration: none;
 }
@@ -343,10 +373,17 @@ footer h3{
     font-size: 16px;
 }
 
+footer h6{
+    color: #666666;
+    font-size: 14px;
+    margin: 0 0 5px;
+    padding: 0
+}
+
 footer li{
     line-height: 0.9;
     list-style: none;
-    margin: 0 0 15px 0;
+    margin: 0 0 10px 0;
 }
 
 footer p{
@@ -359,7 +396,7 @@ footer span{
 }
 
 footer span a{
-    margin-left: -2px;
+ 
 }
 
 footer ul{
@@ -370,7 +407,7 @@ footer ul{
 #footer-sidebar-1{
     float: left;
     margin-left: 20px;
-    width: 250px;
+    width: 200px;
 }
 
 #footer-sidebar-1 a{
@@ -400,8 +437,8 @@ footer ul{
 
 #footer-sidebar-3{
     float: left;
-    margin-left: 50px;
-    width: 250px;
+    margin-left: 75px;
+    width: 300px;
 }
 
 #footer-sidebar-3 a{

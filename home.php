@@ -14,21 +14,20 @@ get_header(); ?>
 			</section>
 			<section id="involved"><a href="#">Get <strong>Involved!</strong></a></section>
 		</section>
-		<section id="carousel">
-			
-		</section>
+		<section id="carousel"></section>
 
 		<section id="events">
 			<h1>Upcoming Events</h1>
-			
-		</section>
-
-
-		<section id="spotlight">
-			<h1>Spotlight</h1>
-			<?php query_posts(array('post_type'=>'spotlight', 'posts_per_page' => 1)); ?>
-			    <?php if(have_posts()) while(have_posts()) : the_post(); ?>
-			    <div id="post-<?php the_ID(); ?>" class="entry">
+			<?php 
+				$category_id = get_cat_ID('events');
+				$category_link = get_category_link($category_id);
+			?>
+			<a href="<?php echo esc_url( $category_link ); ?>" class="cal">The Events Calender ></a>
+			<?php 
+			$args = array( 'category' => 'events', 'posts_per_page' => 2 );
+			$loop = new WP_Query( $args );
+			while ( $loop->have_posts() ) : $loop->the_post(); ?>
+				<div id="post-<?php the_ID(); ?>" class="entry">
 			        <div class="thumbnail">
 			        	<?php the_post_thumbnail('thumbnail'); ?>
 			        </div>
@@ -37,7 +36,27 @@ get_header(); ?>
 			            <a href="<?php the_permalink(); ?>">Learn More</a>
 			        </div>
 			    </div>
-		    <?php endwhile; ?>
+			<?php endwhile; ?>
+			
+		</section>
+
+
+		<section id="spotlight">
+			<h1>Spotlight</h1>
+			<?php 
+			$args = array( 'post_type' => 'spotlights', 'posts_per_page' => 1 );
+			$loop = new WP_Query( $args );
+			while ( $loop->have_posts() ) : $loop->the_post(); ?>
+				<div id="post-<?php the_ID(); ?>" class="entry">
+			        <div class="thumbnail">
+			        	<?php the_post_thumbnail('thumbnail'); ?>
+			        </div>
+			        <div class="excerpt">
+			            <?php the_excerpt(); ?>
+			            <a href="<?php the_permalink(); ?>">Learn More</a>
+			        </div>
+			    </div>
+			<?php endwhile; ?>
 
 		</section>
 </div><!-- #primary -->
