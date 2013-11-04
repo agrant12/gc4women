@@ -318,6 +318,7 @@ header #s:focus {
 
 #main{
     float: left;
+    margin: 0 0 20px 0;
     padding: 0 10px;
     width: 700px;
 }
@@ -326,6 +327,12 @@ header #s:focus {
 
 .post{
     float: left;
+}
+
+/* Comments */
+
+.comments-template li{
+    list-style: none;
 }
 
 /* Sidebar */
