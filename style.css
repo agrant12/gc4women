@@ -515,8 +515,8 @@ footer ul{
 
 #carousel{
     float: left;
-    height: 320px;
-    margin-bottom: 15px;
+    height: 323px;
+    margin-bottom: 10px;
     width: 706px;
 }
 
@@ -670,4 +670,62 @@ footer ul{
     font-weight: 500;
     margin: 5px 0 8px 15px;
     text-transform: uppercase;
+}
+
+/* Home page featured slider
+-----------------------------------------------------------*/
+#featured-slider {
+    float:left;
+    width:940px; height:280px;
+    margin:0 10px;
+    position:relative;
+}
+#featured-slider #slides {
+    position:absolute;
+    top:0px;
+    left:0px;
+    z-index:100;
+}
+#featured-slider .slides_container {
+    width:940px;
+    overflow:hidden;
+    position:relative;
+    display:none;
+    background:#FFF;
+}
+#featured-slider .slides_container div.slide {
+    width:940px;
+    height:280px;
+    display:block;
+}
+#featured-slider .caption {
+    z-index:500;
+    position:absolute;
+    top: 30px; left:670px;
+    height:220px;
+    width:240px;
+    font-size:12px;
+    line-height:16px;
+    color:#000;
+}
+#featured-slider .caption h2 {
+    font-size:18px;
+    line-height:22px;
+    margin-bottom:10px;
+}
+
+#featured-slider #slides .next, #slides .prev {
+    position:absolute;
+    top:112px;
+    left:-10px;
+    width:30px;
+    height:37px;
+    display:block;
+    z-index:101;
+    text-indent:-99999em;
+    background: url(images/larr.gif);
+}
+#featured-slider #slides .next {
+    left:926px;
+    background: url(images/rarr.gif);
 }

@@ -26,6 +26,28 @@ function gc4w_custom_post_types(){
 				'comments',
 				'title',
 				'thumbnail',
+				'category',
+				),
+			)
+		);
+
+	register_post_type('features',
+		array(
+			'labels' => array(
+				'name' => 'Features',
+				'singular_name' => 'Features'
+				),
+			'menu_position' => 10,
+			'public' => true,
+			'has_archives' => true,
+			'supports' => array(
+				'editor',
+				'excerpt',
+				'custom-fields',
+				'comments',
+				'title',
+				'thumbnail',
+				'category',
 				),
 			)
 		);

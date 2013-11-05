@@ -7,7 +7,6 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
-
 <?php 
 	if( is_singular() && get_option('thread_comments'))
 		wp_enqueue_script('comment-reply');
@@ -16,6 +15,7 @@
 
 	wp_get_archives('type=monthly&format=link');
 ?>
+<script type="text/javascript" src="<?php get_template_directory_uri().'/js/jquery.slides.min.jquery.js' ?>"></script>
 <?php wp_head(); ?>
 </head>
 <body>

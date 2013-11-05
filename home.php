@@ -14,7 +14,33 @@ get_header(); ?>
 			</section>
 			<section id="involved"><a href="#">Get <strong>Involved!</strong></a></section>
 		</section>
-		<section id="carousel"></section>
+		<section id="carousel">
+			<div id="slides">
+				<div class="slides_container">
+					<?php 
+						$loop = new WP_Query(array('post_type' => 'features', 'posts_per_page' => 2, 'orderby'=> 'ASC')); 
+					?>
+					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+						<div class="slide">
+							<?php $url = get_post_meta($post->ID, "url", true);
+							if($url!='') { 
+								echo '<a href="'.$url.'">';
+								echo the_post_thumbnail('full');
+								echo '</a>';
+							} else {
+								echo the_post_thumbnail('full');
+							} ?>
+							<div class="caption">
+								<h5><?php the_title(); ?></h5>	
+								<?php the_content();?>
+								<a href="<?php the_permalink(); ?>">See Post</a>
+							</div>
+						</div>
+					<?php endwhile; ?>
+					<?php wp_reset_query(); ?> 
+				</div>
+			</div>
+		</section>
 
 		<section id="events">
 			<h1>Upcoming Events</h1>
