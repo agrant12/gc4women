@@ -15,8 +15,16 @@
 
 	wp_get_archives('type=monthly&format=link');
 ?>
-<script type="text/javascript" src="<?php get_template_directory_uri().'/js/jquery.slides.min.jquery.js' ?>"></script>
 <?php wp_head(); ?>
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$('.flexslider').flexslider({
+			animation: "slide",
+			animationLoop: true,
+			maxItems: 4
+		});
+	});
+</script>
 </head>
 <body>
 	<div id="wrapper">

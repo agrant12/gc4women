@@ -15,30 +15,26 @@ get_header(); ?>
 			<section id="involved"><a href="#">Get <strong>Involved!</strong></a></section>
 		</section>
 		<section id="carousel">
-			<div id="slides">
-				<div class="slides_container">
+			<div class="flexslider">
+				<ul class="slides">
 					<?php 
-						$loop = new WP_Query(array('post_type' => 'features', 'posts_per_page' => 2, 'orderby'=> 'ASC')); 
+						$loop = new WP_Query(array('post_type' => 'features', 'posts_per_page' => 4, 'orderby'=> 'ASC')); 
 					?>
 					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-						<div class="slide">
-							<?php $url = get_post_meta($post->ID, "url", true);
-							if($url!='') { 
-								echo '<a href="'.$url.'">';
-								echo the_post_thumbnail('full');
-								echo '</a>';
-							} else {
-								echo the_post_thumbnail('full');
-							} ?>
-							<div class="caption">
-								<h5><?php the_title(); ?></h5>	
-								<?php the_content();?>
-								<a href="<?php the_permalink(); ?>">See Post</a>
+					<li>
+						<div id="post-<?php the_ID(); ?>" class="entry">
+							<div class="thumbnail">
+								<?php the_post_thumbnail('thumbnail'); ?>
+							</div>
+							<div class="excerpt">
+								<?php the_excerpt(); ?>
+								<a href="<?php the_permalink(); ?>">Learn More</a>
 							</div>
 						</div>
+					</li>
 					<?php endwhile; ?>
-					<?php wp_reset_query(); ?> 
-				</div>
+			    </ul>
+				<?php wp_reset_query(); ?> 
 			</div>
 		</section>
 
@@ -53,15 +49,15 @@ get_header(); ?>
 			$args = array( 'category' => 'events', 'posts_per_page' => 2 );
 			$loop = new WP_Query( $args );
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				<div id="post-<?php the_ID(); ?>" class="entry">
-			        <div class="thumbnail">
-			        	<?php the_post_thumbnail('thumbnail'); ?>
-			        </div>
-			        <div class="excerpt">
-			            <?php the_excerpt(); ?>
-			            <a href="<?php the_permalink(); ?>">Learn More</a>
-			        </div>
-			    </div>
+			<div id="post-<?php the_ID(); ?>" class="entry">
+				<div class="thumbnail">
+					<?php the_post_thumbnail('thumbnail'); ?>
+				</div>
+				<div class="excerpt">
+					<?php the_excerpt(); ?>
+					<a href="<?php the_permalink(); ?>">Learn More</a>
+				</div>
+			</div>
 			<?php endwhile; ?>
 			
 		</section>
