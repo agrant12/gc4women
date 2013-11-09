@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<div id="main">
+<div id="home">
 		<section id="left_rail">
 			<section id="intro_header">
 				<h1>Intro Header</h1>
@@ -70,6 +70,7 @@ get_header(); ?>
 				</div>
 			</div>
 			<?php endwhile; ?>
+			<?php wp_reset_query(); ?>
 		</section>
 		<section id="spotlight">
 			<h1>Spotlight</h1>
@@ -87,6 +88,7 @@ get_header(); ?>
 			        </div>
 			    </div>
 			<?php endwhile; ?>
+			<?php wp_reset_query(); ?>
 
 		</section>
 </div><!-- #primary -->

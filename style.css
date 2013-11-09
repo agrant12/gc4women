@@ -318,7 +318,21 @@ header #s:focus {
 
 #main{
     float: left;
-    width: 960px;
+    margin: 0 0 20px 0;
+    padding: 0 10px;
+    width: 700px;
+}
+
+/* Post Page */
+
+.post{
+    float: left;
+}
+
+/* Comments */
+
+.comments-template li{
+    list-style: none;
 }
 
 /* Sidebar */
@@ -327,13 +341,26 @@ header #s:focus {
     float: left;
     font-size: 14px;
     list-style: none;
-    margin: 0 0 20px 0;
-    padding: 0 0 0 10px;
-    width: 210px;
+    margin: 0 0 20px 12px;
+    padding: 0 0 0 25px;
+    width: 200px;
 }
 
 .sidebar h2{
+    color: #666666;
     font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.sidebar li{
+    list-style: none;
+}
+
+.sidebar ul{
+    margin: 0;
+    padding: 0;
 }
 
 .sidebar table{
