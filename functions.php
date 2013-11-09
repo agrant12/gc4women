@@ -19,7 +19,7 @@
 
 	//Enable post theumbnails
 	add_theme_support('post-thumbnails');
-	set_post_thumbnail_size(520, 250, true);
+	set_post_thumbnail_size(250, 250, true);
 
 	//Widget enabled sidebar
 	if ( function_exists('register_sidebar') )
@@ -58,5 +58,5 @@
 	add_action('widgets_init','gc4w_widget_init');
 
 	//Custom Backgrounds
-	//add_theme_support('custom-background');
+	add_theme_support('custom-background');
 ?>

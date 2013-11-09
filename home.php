@@ -24,11 +24,10 @@ get_header(); ?>
 					<li>
 						<div id="post-<?php the_ID(); ?>" class="entry">
 							<div class="thumbnail">
-								<?php the_post_thumbnail('thumbnail'); ?>
+								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('featured-image'); ?></a>
 							</div>
 							<div class="excerpt">
 								<?php the_excerpt(); ?>
-								<a href="<?php the_permalink(); ?>">Learn More</a>
 							</div>
 						</div>
 					</li>
@@ -37,7 +36,19 @@ get_header(); ?>
 				<?php wp_reset_query(); ?> 
 			</div>
 		</section>
-
+		<script type="text/javascript">
+			jQuery(document).ready(function($){
+				$('.flexslider').flexslider({
+					animation: "slide",
+					animationLoop: true,
+					animationSpeed: 500,
+					easing: 'swing',
+					slideshowSpeed: 5000,
+					pauseOnHover: true, 
+					maxItems: 4
+				});
+			});
+		</script>
 		<section id="events">
 			<h1>Upcoming Events</h1>
 			<?php 
@@ -59,10 +70,7 @@ get_header(); ?>
 				</div>
 			</div>
 			<?php endwhile; ?>
-			
 		</section>
-
-
 		<section id="spotlight">
 			<h1>Spotlight</h1>
 			<?php 
