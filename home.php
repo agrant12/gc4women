@@ -14,8 +14,41 @@ get_header(); ?>
 			</section>
 			<section id="involved"><a href="#">Get <strong>Involved!</strong></a></section>
 		</section>
-		<section id="carousel"></section>
-
+		<section id="carousel">
+			<div class="flexslider">
+				<ul class="slides">
+					<?php 
+						$loop = new WP_Query(array('post_type' => 'features', 'posts_per_page' => 4, 'orderby'=> 'ASC')); 
+					?>
+					<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+					<li>
+						<div id="post-<?php the_ID(); ?>" class="entry">
+							<div class="thumbnail">
+								<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('featured-image'); ?></a>
+							</div>
+							<div class="excerpt">
+								<?php the_excerpt(); ?>
+							</div>
+						</div>
+					</li>
+					<?php endwhile; ?>
+			    </ul>
+				<?php wp_reset_query(); ?> 
+			</div>
+		</section>
+		<script type="text/javascript">
+			jQuery(document).ready(function($){
+				$('.flexslider').flexslider({
+					animation: "slide",
+					animationLoop: true,
+					animationSpeed: 500,
+					easing: 'swing',
+					slideshowSpeed: 5000,
+					pauseOnHover: true, 
+					maxItems: 4
+				});
+			});
+		</script>
 		<section id="events">
 			<h1>Upcoming Events</h1>
 			<?php 
@@ -27,21 +60,18 @@ get_header(); ?>
 			$args = array( 'category' => 'events', 'posts_per_page' => 2 );
 			$loop = new WP_Query( $args );
 			while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				<div id="post-<?php the_ID(); ?>" class="entry">
-			        <div class="thumbnail">
-			        	<?php the_post_thumbnail('thumbnail'); ?>
-			        </div>
-			        <div class="excerpt">
-			            <?php the_excerpt(); ?>
-			            <a href="<?php the_permalink(); ?>">Learn More</a>
-			        </div>
-			    </div>
+			<div id="post-<?php the_ID(); ?>" class="entry">
+				<div class="thumbnail">
+					<?php the_post_thumbnail('thumbnail'); ?>
+				</div>
+				<div class="excerpt">
+					<?php the_excerpt(); ?>
+					<a href="<?php the_permalink(); ?>">Learn More</a>
+				</div>
+			</div>
 			<?php endwhile; ?>
 			<?php wp_reset_query(); ?>
-			
 		</section>
-
-
 		<section id="spotlight">
 			<h1>Spotlight</h1>
 			<?php 

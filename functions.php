@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	// Use wp_nav_menu
 	register_nav_menu( 'primary', __( 'Primary Menu', 'gc4women' ) );
@@ -7,9 +7,19 @@
 	include(dirname(__FILE__).'/plugins/site-settings/site-settings.php');
 	include(dirname(__FILE__).'/plugins/post_types/post_types.php');
 
+	add_action('wp_enqueue_scripts', 'load_javascript_files');
+
+	function load_javascript_files(){
+		wp_register_script('flexslider', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array('jquery'), '1.7');
+
+		if(is_front_page()){
+			wp_enqueue_script('flexslider');
+		}
+	}
+
 	//Enable post theumbnails
 	add_theme_support('post-thumbnails');
-	set_post_thumbnail_size(520, 250, true);
+	set_post_thumbnail_size(250, 250, true);
 
 	//Widget enabled sidebar
 	if ( function_exists('register_sidebar') )
@@ -45,8 +55,8 @@
 			'after_title' => '</h3>'
 		));
 	}
-	add_action('widgets_init','gc4w_widget_init')
+	add_action('widgets_init','gc4w_widget_init');
 
 	//Custom Backgrounds
-	//add_theme_support('custom-background');
+	add_theme_support('custom-background');
 ?>
