@@ -209,7 +209,7 @@ small{
 .menu-navigation-container{
     display: block;
     float: right;
-    margin: 10px auto;
+    margin: 10px auto 0;
     width: 490px;
 }
 
