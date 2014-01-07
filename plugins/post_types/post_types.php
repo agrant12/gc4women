@@ -35,9 +35,56 @@ function gc4w_custom_post_types(){
 		array(
 			'labels' => array(
 				'name' => 'Features',
-				'singular_name' => 'Features'
+				'singular_name' => 'Feature'
 				),
-			'menu_position' => 10,
+			'show_in_nav_menus' => TRUE,
+			'show_in_menu' => TRUE,
+			'menu_position' => 6,
+			'taxonomies' => array('category'),
+			'public' => true,
+			'has_archives' => true,
+			'supports' => array(
+				'editor',
+				'excerpt',
+				'custom-fields',
+				'comments',
+				'title',
+				'thumbnail',
+				'category',
+				),
+			)
+		);
+
+	register_post_type('events',
+		array(
+			'labels' => array(
+				'name' => 'Events',
+				'singular_name' => 'Event'
+				),
+			'menu_position' => 3,
+			'taxonomies' => array('category'),
+			'public' => true,
+			'has_archives' => true,
+			'supports' => array(
+				'editor',
+				'excerpt',
+				'custom-fields',
+				'comments',
+				'title',
+				'thumbnail',
+				'category',
+				),
+			)
+		);
+
+	register_post_type('programs',
+		array(
+			'labels' => array(
+				'name' => 'Programs',
+				'singular_name' => 'Program'
+				),
+			'menu_position' => 4,
+			'taxonomies' => array('category'),
 			'public' => true,
 			'has_archives' => true,
 			'supports' => array(

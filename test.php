@@ -1,8 +1,15 @@
+<?php
+/*
+Single Post Template: Test Post
+Description: This part is optional, but helpful for describing the Post Template
+*/
+?>
+
 <?php get_header(); ?>
     <div class="container">
         <div class="main">
             <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
-
+            	<h1>Hi</h1>
             <div class="post">
                 <div class="entry">   
                 <?php the_content(); ?>
@@ -30,3 +37,5 @@
         <?php get_sidebar(); ?>  
     </div> 
 <?php get_footer(); ?>
+
+
