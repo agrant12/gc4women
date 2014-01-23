@@ -103,7 +103,7 @@
 	set_post_thumbnail_size(250, 250, true);
 
 	if ( function_exists( 'add_image_size' ) ) { 
-		add_image_size( 'category-thumb', 350, 9999, true ); //300 pixels wide (and unlimited height)
+		add_image_size( 'category-thumb', 350, 9999, false ); //300 pixels wide (and unlimited height)
 		add_image_size( 'homepage-thumb', 450, 250, true ); //(cropped)
 	}
 

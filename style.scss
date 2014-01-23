@@ -391,14 +391,13 @@ footer {
 			float: left;
 			height: 306px;
 			list-style: none;
-			margin: 0 7px;
+			margin: 0 20px;
 			overflow: hidden;
 			position: relative;
 			width: 333px;
 			.thumbnail{
 			}
 			.overlay{
-				//background: #0d345f;
 				background: #666;
 				height: 306px;
 				opacity: 0.5;
@@ -432,8 +431,10 @@ footer {
 				}
 				h3{
 					color: #fff;
+					font-family: 'Arvo';
 					font-size: 1.3em;
 					font-weight: 500;
+					letter-spacing: 2;
 					margin-bottom: 5px;
 					text-shadow: 1px 1px 1px #111;
 				}
@@ -445,22 +446,11 @@ footer {
 				}
 			}
 		}
-		aside.news{
-			border: none;
-			a{
-				color: #666;
-				font-size: 1.1em;
-				text-decoration: none;
-			}
-			a:hover{
-				text-decoration: underline;
-			}
-			.news_content{
-				border: 1px solid #ccc;
-			}
+		aside:first-child{
+			margin: 0;
 		}
-		.home_content{
-			height: 450px;
+		aside:last-child{
+			margin: 0;
 		}
 		.action_call{
 			background: #FFFFFF;
@@ -496,7 +486,7 @@ footer {
 				background: #666;
 			}
 			h3{
-				color: #A7AAAC;
+				color: #222222;
 				font-size: 25px;
 				font-weight: 200;
 				margin: 0 0 5px 0;
@@ -511,26 +501,149 @@ footer {
 			//background: url(images/hp-feature1.jpg) no-repeat;
 		}
 	}
-	section#the-latest{
-		background: #222222;
-		height: 37px;
-		margin: 20px 6px;
+	.champions{
+		float: left;
+		margin: 0 0 0 20px;
+		width: 335px;
+		h2{
+			a{
+				text-decoration: none;
+			}
+		}
 		h3{
-			background: #FBAD1E;
+			background: #222222;
 			color: #FFFFFF;
 			font-size: 1.0em;
 			font-family: 'Arvo';
-			padding: 9px;
-			width: 316px;
+			padding: 9px 5px;
+		}
+		ul{
+			margin: 0;
+			list-style: none;
+			padding: 0;
+			li{
+				list-style: none;
+				img{
+					display: none;
+				}
+			}
+			li:first-child{
+				img{
+					display: block;
+				}
+			}
+		}
+	}
+	.events{
+		float: left;
+		margin: 0 20px 0 0;
+		width: 335px;
+		h2{
+			a{
+				text-decoration: none;
+			}
+		}
+		h3{
+			background: #222222;
+			color: #FFFFFF;
+			font-size: 1.0em;
+			font-family: 'Arvo';
+			padding: 9px 5px;
+		}
+		ul{
+			margin: 0;
+			padding: 0;
+			li{
+				background: #ccc;
+				border-bottom: 2px solid #ccc;
+				clear: both;
+				list-style: none;
+				margin: 2px 0;
+				min-height: 20px;
+				padding: 5px;
+				a{
+					color: #222222;
+					font-size: 0.9em;
+					font-weight: normal;
+					text-decoration: none;
+				}
+				a:hover{
+					color: #FBAD1E;
+					text-decoration: underline;
+				}
+				img{
+					display: none;
+				}
+			}
+			li:first-child{
+				background: none;
+				padding: 5px 0;
+				img{
+					display: block;
+				}
+			}
 		}
 	}
 	section.news{
-			width: 686px;
+		float: left;
+		margin: 0;
+		width: 335px;
+		h2{
+			float: left;
+			a{
+				font-size: 0.8em;
+				font-weight: bold;
+				letter-spacing: 0.1em;
+				text-decoration: none;
+				text-transform: uppercase;
+			}
 		}
+		h3{
+			background: #222222;
+			color: #FFFFFF;
+			font-size: 1.0em;
+			font-family: 'Arvo';
+			padding: 9px 5px;
+		}
+		ul{
+			padding: 0;
+			li{
+				background: #ccc;
+				border-bottom: 2px solid #ccc;
+				clear: both;
+				list-style: none;
+				margin: 2px 0;
+				min-height: 20px;
+				padding: 5px;
+				a{
+					color: #222222;
+					font-weight: normal;
+					min-height: 20px;
+					text-decoration: none;
+				}
+				a:hover{
+					text-decoration: underline;
+				}
+			}
+			li:first-child{
+				background: none;
+				img{
+					display: block;
+				}
+			}
+			li:last-child{
+				border: 0;
+			}	
+		}
+		p{
+			float: left;
+			margin: 15px 3px;
+		}
+	}
 	section.home_content{
 		width: 1048px;
 	}
-	.row1{
+	.spotlight_row{
 		height: 306px;
 		margin-top: 20px;
 		position: relative;
@@ -546,10 +659,10 @@ footer {
 	overflow: hidden;
 	width: 1048px;
 		.slide_info{
-			background: #ccc;
+			background: #222222;
 			bottom: 0;
-			display: none;
-			opacity: 0.9;
+			opacity: 0;
+			padding: 10px;
 			position: absolute;
 			width: 100%;
 			.container{
@@ -573,9 +686,9 @@ footer {
 			}
 			.title{
 				clear: both;
-				color: #000;
-				font-size: 31px;
-				text-shadow: 1px 1px 1px #111;
+				color: #FFFFFF;
+				font-size: 21px;
+				//text-shadow: 1px 1px 1px #111;
 			}
 		}
 	}

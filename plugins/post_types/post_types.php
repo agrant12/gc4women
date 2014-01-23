@@ -55,28 +55,6 @@ function gc4w_custom_post_types(){
 			)
 		);
 
-	register_post_type('events',
-		array(
-			'labels' => array(
-				'name' => 'Events',
-				'singular_name' => 'Event'
-				),
-			'menu_position' => 3,
-			'taxonomies' => array('category'),
-			'public' => true,
-			'has_archives' => true,
-			'supports' => array(
-				'editor',
-				'excerpt',
-				'custom-fields',
-				'comments',
-				'title',
-				'thumbnail',
-				'category',
-				),
-			)
-		);
-
 	register_post_type('programs',
 		array(
 			'labels' => array(
