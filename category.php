@@ -21,10 +21,12 @@
       <?php } ?>
          
         <div class="post">
-        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
- 
+          <h3>
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+          </h3>
             <div class="entry">
-            <?php the_content(); ?>
+            <?php MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'category-thumb'); ?>
+            <?php the_excerpt(); ?>
  
                 <p class="postmetadata">
                 <?php _e('Filed under&#58;'); ?> <?php the_category(', ') ?> <?php _e('by'); ?> <?php  the_author(); ?><br />

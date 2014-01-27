@@ -8,11 +8,11 @@ jQuery(document).ready(function($){
 
 	$('.overlay').on('hover', function(){
 		if(defaultHover){
-			$(this).animate({ opacity : 0 }, 'fast');
+			$(this).animate({ opacity : 1 }, 'fast');
 			
 			defaultHover = false;
 		} else{
-			$(this).animate({ opacity : 0.5 }, 'fast');
+			$(this).animate({ opacity : 0 }, 'fast');
 			
 			defaultHover = true;
 		}
