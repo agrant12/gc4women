@@ -396,9 +396,8 @@ footer {
 			overflow: hidden;
 			width: 334px;
 			.banner{
-				background: url(images/opacity-background.png);
+				background: url(images/opacity-background.png) #666;
 				color: #fff;
-				cursor: pointer;
 				font-size: 0.8em;
 				font-weight: normal;
 				height: 50px;
@@ -419,11 +418,22 @@ footer {
 					float: right;
 					font-style: italic;
 				}
+				.all:hover{
+					color: #FBAD1E;
+				}
 				.link{
 					color: #FBAD1E;
+					margin-top: 5px;
+				}
+				.link:hover{
+					color: #FFFFFF;
 				}
 				strong{
 					font-size: 1.2em;
+				}
+				.title{
+					color: #FFFFFF;
+					margin-bottom: 10px;
 				}
 			}
 			.info{
@@ -497,10 +507,16 @@ footer {
 		.about{
 			border: 0;
 			a{
+				font-size: 0.9em;
+				font-weight: 500;
 				text-decoration: none;
 			}
 			h3{
 				color: #ff9900;
+				text-transform: uppercase;
+			}
+			p{
+				font-size: 0.8em;
 			}
 		}
 		.action_call{
@@ -566,7 +582,7 @@ footer {
 	overflow: hidden;
 	width: 1048px;
 		.slide_info{
-			background: #222222;
+			background: url(images/opacity-background.png);
 			bottom: 0;
 			opacity: 0;
 			padding: 10px;
