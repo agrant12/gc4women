@@ -121,6 +121,11 @@ header {
         background: #FBAD1E; }
       header .nav-menu ul li:first-child {
         margin: 0; }
+    header .nav-menu ul.sub-menu li {
+      clear: both;
+      margin: 0; }
+    header .nav-menu ul.sub-menu li:first-child {
+      margin: 0; }
   header section {
     border-top: 3px solid #FBAD1E;
     bottom: 0;
@@ -134,10 +139,11 @@ header {
   header #searchform input[type="submit"] {
     display: none; }
   header #searchform #s {
-    background: #000;
+    background: #FFFFFF;
     float: right;
-    height: 19px;
-    margin: 35px -35px 0;
+    font-size: 1.2em;
+    height: 29px;
+    margin: 5px 10px 0 0;
     -webkit-transition-duration: 400ms;
     -webkit-transition-property: width, background;
     -webkit-transition-timing-function: ease;
@@ -147,10 +153,10 @@ header {
     -o-transition-duration: 400ms;
     -o-transition-property: width, background;
     -o-transition-timing-function: ease;
-    width: 150px; }
+    width: 274px; }
   header #searchform #s:focus {
     background-color: #f9f9f9;
-    width: 200px; }
+    width: 280px; }
   header #site-description {
     color: #FBAD1E;
     display: block;
@@ -322,6 +328,8 @@ footer {
     position: relative;
     overflow: hidden;
     width: 334px; }
+    #home section aside a {
+      font-weight: bold; }
     #home section aside .banner {
       background: url(images/opacity-background.png) #666666;
       color: #fff;
@@ -332,7 +340,7 @@ footer {
       padding: 4px;
       position: absolute;
       text-decoration: none;
-      text-shadow: 1px 1px 1px #111;
+      text-shadow: 1px 1px 1px #111111;
       text-transform: uppercase;
       top: 260px;
       width: 98%; }
@@ -415,6 +423,8 @@ footer {
       font-size: 0.9em;
       font-weight: 500;
       text-decoration: none; }
+    #home section .about a:hover {
+      text-decoration: underline; }
     #home section .about h3 {
       color: #ff9900;
       text-transform: uppercase; }
@@ -464,7 +474,7 @@ footer {
     margin: 10px 5px 0px 5px;
     width: 250px; }
   #home section .programs {
-    background: url(images/hp-feature1.jpg) no-repeat; }
+    background: url(images/hp-feature.jpg) no-repeat; }
 #home section.home_content {
   width: 1048px; }
 
@@ -496,8 +506,9 @@ footer {
         margin: 0; }
     .flexslider .slide_info .title {
       clear: both;
-      color: #FFFFFF;
-      font-size: 21px; }
+      color: #FBAD1E;
+      font-size: 1.7em;
+      text-shadow: 1px 1px 1px #111; }
 
 .navigation {
   display: none; }
@@ -513,17 +524,101 @@ footer {
   #wrapper .main {
     float: left;
     margin-bottom: 100px;
-    width: 620px; }
-    #wrapper .main .post h3 {
-      font-size: 18px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase; }
-      #wrapper .main .post h3 a {
-        color: #666;
-        text-decoration: none; }
-    #wrapper .main .post .entry .postmetadata {
-      display: none; }
+    width: 650px; }
+    #wrapper .main aside {
+      border: 1px solid #cccccc;
+      float: left;
+      height: 306px;
+      list-style: none;
+      margin: 10px 5px 0 0;
+      position: relative;
+      overflow: hidden;
+      width: 315px; }
+      #wrapper .main aside .banner {
+        background: url(images/opacity-background.png) #666666;
+        color: #fff;
+        font-size: 0.8em;
+        font-weight: normal;
+        height: 50px;
+        left: 0px;
+        padding: 4px;
+        position: absolute;
+        text-decoration: none;
+        text-shadow: 1px 1px 1px #111;
+        text-transform: uppercase;
+        top: 260px;
+        width: 98%; }
+        #wrapper .main aside .banner a {
+          color: #FFFFFF;
+          font-size: 0.9em;
+          text-decoration: none; }
+        #wrapper .main aside .banner .all {
+          float: right;
+          font-style: italic; }
+        #wrapper .main aside .banner .all:hover {
+          color: #FBAD1E; }
+        #wrapper .main aside .banner .link {
+          color: #FBAD1E;
+          margin-top: 5px; }
+        #wrapper .main aside .banner .link:hover {
+          color: #FFFFFF; }
+        #wrapper .main aside .banner strong {
+          font-size: 1.2em; }
+        #wrapper .main aside .banner .title {
+          color: #FFFFFF;
+          margin-bottom: 10px; }
+    #wrapper .main .post {
+      margin-top: 10px; }
+      #wrapper .main .post .excerpt {
+        border-bottom: 3px dotted #666;
+        border-top: 1px dotted #666;
+        font-style: italic;
+        margin: 20px 0;
+        min-height: 50px;
+        text-align: center; }
+        #wrapper .main .post .excerpt p {
+          font-size: 1.1em;
+          font-weight: bold; }
+      #wrapper .main .post h2 {
+        color: #222;
+        font-size: 1.5em;
+        margin: 0; }
+      #wrapper .main .post h3 {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase; }
+        #wrapper .main .post h3 a {
+          color: #666;
+          text-decoration: none; }
+      #wrapper .main .post img {
+        height: auto;
+        margin-top: 13px;
+        width: 650px; }
+      #wrapper .main .post .post-header {
+        border-bottom: 1px dashed #ccc;
+        padding-bottom: 5px; }
+      #wrapper .main .post span {
+        font-size: 0.75em; }
+        #wrapper .main .post span a {
+          text-decoration: none; }
+        #wrapper .main .post span a:hover {
+          text-decoration: underline; }
+      #wrapper .main .post .entry .postmetadata {
+        display: none; }
+  #wrapper #programs {
+    text-align: center;
+    width: 1048px; }
+    #wrapper #programs aside {
+      margin: 10px 10px 0 35px; }
+      #wrapper #programs aside .banner {
+        top: 250px; }
+    #wrapper #programs aside:first-child {
+      margin: 10px 10px 0 0; }
+    #wrapper #programs aside:nth-child(3n) {
+      margin-right: 0; }
+    #wrapper #programs h2 {
+      font-size: 1.2em; }
   #wrapper .sidebar {
     float: right;
     font-size: 14px;
@@ -536,7 +631,7 @@ footer {
       font-size: 13px;
       text-decoration: none; }
     #wrapper .sidebar h2 {
-      background: #FBAD1E;
+      background: #222222;
       color: #FFFFFF;
       font-size: 1.25em;
       font-weight: 500;

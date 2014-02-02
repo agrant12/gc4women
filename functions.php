@@ -5,7 +5,7 @@
 
 	//Register custom plugins
 	include(dirname(__FILE__).'/plugins/site-settings/site-settings.php');
-	include(dirname(__FILE__).'/plugins/post_types/post_types.php');
+	//include(dirname(__FILE__).'/plugins/post_types/post_types.php');
 
 	add_action('wp_enqueue_scripts', 'load_javascript_files');
 

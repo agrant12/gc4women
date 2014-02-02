@@ -142,6 +142,15 @@ header{
 				margin: 0;
 			}
 		}
+		ul.sub-menu{
+			li{
+				clear: both;
+				margin: 0;
+			}
+			li:first-child{
+				margin: 0;
+			}
+		}
 	}
 	section{
 		border-top: 3px solid #FBAD1E;
@@ -160,10 +169,11 @@ header{
 			display: none;
 		}
 		#s{
-			background: #000;
+			background: #FFFFFF;
 			float: right;
-			height: 19px;
-			margin: 35px -35px 0;
+			font-size: 1.2em;
+			height: 29px;
+			margin: 5px 10px 0 0;
 			-webkit-transition-duration: 400ms;
 			-webkit-transition-property: width, background;
 			-webkit-transition-timing-function: ease;
@@ -173,11 +183,11 @@ header{
 			-o-transition-duration: 400ms;
 			-o-transition-property: width, background;
 			-o-transition-timing-function: ease;
-			width: 150px;
+			width: 274px;
 		}
 		#s:focus {
 			background-color: #f9f9f9;
-			width: 200px;
+			width: 280px;
 		}
 	}
 	#site-description{
@@ -395,6 +405,9 @@ footer {
 			position: relative;
 			overflow: hidden;
 			width: 334px;
+			a{
+				font-weight: bold;
+			}
 			.banner{
 				background: url(images/opacity-background.png) #666;
 				color: #fff;
@@ -405,7 +418,7 @@ footer {
 				padding: 4px;
 				position: absolute;
 				text-decoration: none;
-				text-shadow: 1px 1px 1px #111;
+				text-shadow: 1px 1px 1px #111111;
 				text-transform: uppercase;
 				top: 260px;
 				width: 98%;
@@ -511,6 +524,9 @@ footer {
 				font-weight: 500;
 				text-decoration: none;
 			}
+			a:hover{
+				text-decoration: underline;
+			}
 			h3{
 				color: #ff9900;
 				text-transform: uppercase;
@@ -569,7 +585,7 @@ footer {
 			width: 250px;
 		}
 		.programs{
-			background: url(images/hp-feature1.jpg) no-repeat;
+			background: url(images/hp-feature.jpg) no-repeat;
 		}
 	}
 	section.home_content{
@@ -609,9 +625,9 @@ footer {
 			}
 			.title{
 				clear: both;
-				color: #FFFFFF;
-				font-size: 21px;
-				//text-shadow: 1px 1px 1px #111;
+				color: #FBAD1E;
+				font-size: 1.7em;
+				text-shadow: 1px 1px 1px #111;
 			}
 		}
 	}
@@ -632,8 +648,77 @@ footer {
 	.main{
 		float: left;
 		margin-bottom: 100px;
-		width: 620px;
+		width: 650px;
+		aside{
+			border: 1px solid #cccccc;
+			float: left;
+			height: 306px;
+			list-style: none;
+			margin: 10px 5px 0 0;
+			position: relative;
+			overflow: hidden;
+			width: 315px;
+			.banner{
+				background: url(images/opacity-background.png) #666;
+				color: #fff;
+				font-size: 0.8em;
+				font-weight: normal;
+				height: 50px;
+				left: 0px;
+				padding: 4px;
+				position: absolute;
+				text-decoration: none;
+				text-shadow: 1px 1px 1px #111;
+				text-transform: uppercase;
+				top: 260px;
+				width: 98%;
+				a{
+					color: #FFFFFF;
+					font-size: 0.9em;
+					text-decoration: none;
+				}
+				.all{
+					float: right;
+					font-style: italic;
+				}
+				.all:hover{
+					color: #FBAD1E;
+				}
+				.link{
+					color: #FBAD1E;
+					margin-top: 5px;
+				}
+				.link:hover{
+					color: #FFFFFF;
+				}
+				strong{
+					font-size: 1.2em;
+				}
+				.title{
+					color: #FFFFFF;
+					margin-bottom: 10px;
+				}
+			}
+		}
 		.post{
+			margin-top: 10px;
+			.excerpt{
+				border-bottom: 3px dotted #666;
+				border-top: 1px dotted #666;
+				font-style: italic;
+				margin: 20px 0;
+				min-height: 50px;
+				text-align: center;
+				p{
+					font-size: 1.1em;
+					font-weight: bold;
+				}
+			}
+			h2{
+				color: #222;
+				font-size: 1.5em;
+				margin: 0;
+			}
 			h3{
 				font-size: 18px;
 				font-weight: 500;
@@ -644,11 +729,48 @@ footer {
 					text-decoration: none;
 				}
 			}
+			img{
+				height: auto;
+				margin-top: 13px;
+				width: 650px;
+			}
+			.post-header{
+				border-bottom: 1px dashed #ccc;
+				padding-bottom: 5px;
+			}
+			span{
+				font-size: 0.75em;
+				a{
+					text-decoration: none;
+				}
+				a:hover{
+					text-decoration: underline;
+				}
+			}
 			.entry{
 				.postmetadata{
 					display: none;
 				}
 			}
+		}
+	}
+	#programs{
+		text-align: center;
+		width: 1048px;
+		aside{
+			margin: 10px 10px 0 35px;
+			.banner{
+				top: 250px;
+			}
+		}
+		aside:first-child{
+			margin: 10px 10px 0 0;
+		}
+		aside:nth-child(3n){
+			margin-right: 0;
+		}
+		h2{
+			font-size: 1.2em;
 		}
 	}
 	.sidebar{
@@ -664,7 +786,7 @@ footer {
 			text-decoration: none;
 		}
 		h2{
-			background: #FBAD1E;
+			background: #222222;
 			color: #FFFFFF;
 			font-size: 1.25em;
 			font-weight: 500;
