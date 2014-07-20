@@ -4,32 +4,31 @@
  */
 
 get_header(); ?>
-    <style type="text/css">
-      #map-canvas { height: 150px; width: 100%;}
-    </style>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc1a9MASa_R2hVIK_oMgcHi-vWpboEcIU&sensor=false">
-    </script>
-    <script type="text/javascript">
-      var center = new google.maps.LatLng(40.7078, -74.0129);
+<style type="text/css">
+  #map-canvas { height: 150px; width: 100%;}
+</style>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc1a9MASa_R2hVIK_oMgcHi-vWpboEcIU&sensor=false"></script>
+<script type="text/javascript">
+  var center = new google.maps.LatLng(40.7078, -74.0129);
 
-      function initialize() {
-        var mapOptions = {
-          center: center,
-          zoom: 9,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
+  function initialize() {
+    var mapOptions = {
+      center: center,
+      zoom: 9,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map-canvas"),
+        mapOptions);
 
-        var marker = new google.maps.Marker({
-          position: center,
-          draggable: false
-        });
+    var marker = new google.maps.Marker({
+      position: center,
+      draggable: false
+    });
 
-        marker.setMap(map);ß
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
+    marker.setMap(map);
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 <section id="contact">
 <div id="map-canvas"></div>
 	<aside>

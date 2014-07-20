@@ -1,18 +1,26 @@
 <?php get_header(); ?>
 
-<div class="main">
-	<h2>GC4W Champions</h2>
-		<?php $loop = new WP_Query(array('category_name' => 'Champions', 'posts_per_page' => -1, 'orderby'=> 'ASC')); ?>
+<div class="news">
+	<section class="news-feed">
+		<article class="news-container">
+			<header>
+				<h1>GC4W Champions</h1>
+			</header>
+			<?php $loop = new WP_Query(array('category_name' => 'Champions', 'posts_per_page' => -1, 'orderby'=> 'ASC')); ?>
 			<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				<aside>
-				<div class="banner">
-					<span class="title"><strong><?php the_title(); ?></strong></span><br />
-					<a class="link" href="<?php the_permalink(); ?>"><em>View This Champion ></em></a>
-				</div>
-				<div class="thumbnail"><a href="<?php the_permalink(); ?>"><?php MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'homepage-thumb'); ?></a></div>
+					<div class="img"><a class="link" href="<?php the_permalink(); ?>"><?php MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'carousel'); ?></a></div>
+					<section class="content">
+						<h2 class="post-title"><?php truncate(get_the_title(), 0, 100); ?></h2>
+						<p><?php truncate(get_the_excerpt(), 0, 100); ?></p>
+						<a class="post-link" href="<?php the_permalink(); ?>">View Champion</a>
+						<a class="arrow" href="<?php the_permalink(); ?>">Arrow</a>
+					</section>
 				</aside>
 			<?php endwhile; ?>
-		<?php wp_reset_query(); ?>
+			<?php wp_reset_query(); ?>
+		</article>
+	</section>
 </div>
 <?php get_sidebar(); ?>   
 <?php get_footer(); ?>
