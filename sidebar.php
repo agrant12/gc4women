@@ -1,4 +1,8 @@
 <div class="sidebar">
-	<?php if (function_exists('dynamic_sidebar') && dynamic_sidebar() ) : else : ?>
+	<?php if ( is_active_sidebar('homepage-sidebar') ) : ?>
+		<div id="secondary" class="widget-area" role="complementary">
+		<?php dynamic_sidebar( 'homepage-sidebar' ); ?>
+		</div>
 	<?php endif; ?>
 </div>
+

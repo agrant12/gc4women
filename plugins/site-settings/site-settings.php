@@ -100,6 +100,11 @@ class GC4WSettings {
         add_settings_field('action_header', 'Header Call', array($this, 'action_header'), 'gc4w-settings', 'action_call');
         add_settings_field('action_sub', 'Sub Call', array($this, 'action_sub'), 'gc4w-settings', 'action_call');
         add_settings_field('action_link', 'Permalink', array($this, 'action_link'), 'gc4w-settings', 'action_call');
+
+        add_settings_section('donation', 'Donation', array($this, 'section_gc4w_settings'), 'gc4w-settings');
+
+        add_settings_field('we_care', 'We Care Shop', array($this, 'we_care'), 'gc4w-settings', 'donation');
+        add_settings_field('donate', 'Donate', array($this, 'donate'), 'gc4w-settings', 'donation');
     }
 
     private function set_defaults($name = '') {
@@ -112,6 +117,8 @@ class GC4WSettings {
                           'action_header' => 'Headline goes here.',
                           'action_sub' => 'Subheadline goes here.',
                           'action_link' => '#',
+                          'we_care' => '',
+                          'donation' => '',
                          );
 
         // if no $name, then this call is to reset all defaults
@@ -179,6 +186,14 @@ class GC4WSettings {
 
     function action_link(){
         echo '<input type="text" size="40" value="'.self::get_setting('action_link').'" id="action_link" name="gc4w_settings[action_link]" />';
+    }
+
+    function we_care(){
+        echo '<input type="text" size="40" value="'.self::get_setting('we_care').'" id="we_care" name="gc4w_settings[we_care]" />';
+    }
+
+    function donate(){
+        echo '<input type="text" size="40" value="'.self::get_setting('donate').'" id="donations" name="gc4w_settings[donate]" />';
     }
 
     function get_setting($name = '') {

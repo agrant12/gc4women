@@ -7,8 +7,8 @@ get_header(); ?>
 
 <section class="full">
 	<h3>GC4W Programs</h3>
-	<p>The connection, education and empowerment initiatives of the Global Connections for Women Foundation provide the opportunity to make a real difference in the lives of the women and youth we serve.
-	</p>
+	<p>Welcome to the Global Connections for Women foundation’s program page…</p>
+
 	<ul class="tile">
 		<?php
 			$args = array( 'category_name' => 'programs', 'order' => 'ASC', 'posts_per_page' => 6 );

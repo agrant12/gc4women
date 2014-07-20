@@ -20,19 +20,11 @@
 <?php wp_head(); ?>
 </head>
 <body>
-	<header>
-		<div class="container">
-			<a href="<?php echo esc_url(home_url('/')); ?>"><h1 id="site-title"><?php bloginfo('name'); ?></h1></a>
-			<div id="site-description"><?php bloginfo( 'description' ); ?></div>
-			<ul class="social">
-				<?php gc4w_social_widget(); ?>
-			</ul>
-		</div>
-		<section>
-			<div class="container">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-			</div>
-		</section>
+	<header id="top">	
+		<a href="<?php echo esc_url(home_url('/')); ?>"><h1 id="site-title"><?php bloginfo('name'); ?></h1></a>
+		<div id="site-description"><?php bloginfo( 'description' ); ?></div>
+		<ul class="social"><?php gc4w_social_widget(); ?><div class="donate"><a href="<?php echo esc_url(home_url('/donate')); ?>">Donate to GC4W</a></div></ul>
 	</header>
+	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'navigation' ) ); ?>
 	<div id="wrapper">
 		

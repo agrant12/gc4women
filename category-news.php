@@ -1,0 +1,26 @@
+<?php get_header(); ?>
+
+<div class="news">
+	<section class="news-feed">
+		<article class="news-container">
+			<header>
+				<h1>News</h1>
+			</header>
+			<?php $loop = new WP_Query(array('category_name' => 'news', 'posts_per_page' => 15)); ?>
+			<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+				<aside>
+					<div class="img"><a class="link" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'carousel'); ?></a></div>
+					<section class="content">
+						<h2 class="post-title"><?php truncate(get_the_title(), 0, 100); ?></h2>
+						<p><?php truncate(get_the_excerpt(), 0, 100); ?></p>
+						<a class="post-link" href="<?php the_permalink(); ?>">Read Article</a>
+						<a class="arrow" href="<?php the_permalink(); ?>">Arrow</a>
+					</section>
+				</aside>
+			<?php endwhile; ?>
+			<?php wp_reset_query(); ?>
+		</article>
+	</section>
+</div>
+<?php get_sidebar(); ?>   
+<?php get_footer(); ?>
