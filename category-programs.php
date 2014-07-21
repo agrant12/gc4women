@@ -12,7 +12,7 @@ get_header(); ?>
 	<p>While the world changes around us, the mission and purpose of GC4W remains unwaveringly at the core of our programs and initiatives.  GC4W organizational activities (categorized in the 4 major pillars listed below) are the manifestation of our organizational efforts to connect, educate and empower underserved communities the world over.</p>
 	<p>The following 4 major pillars and the programs within them serve as the foundation for achieving our stated goal of enriching the lives of 100,000 women and youth by the end of 2015.</p>
 	
-	<?php $loop = new WP_Query(array('category_name' => 'Programs', 'posts_per_page' => 6, 'orderby'=> 'DESC')); ?>
+	<?php $loop = new WP_Query(array('post_type' => 'Programs', 'posts_per_page' => 6, 'orderby'=> 'DESC')); ?>
 		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 			<ul class="program">
 				<div class="title"><?php the_title(); ?></div>

@@ -63,7 +63,7 @@ $value = cbsradiocom_get_option('FIELD');
 class GC4WSettings {
 
     function add_admin_page() {
-        add_options_page('GC4W Settings', 'GC4W Settings', 'manage_options', 'gc4w-settings', array($this, 'display_page'));
+        add_menu_page('GC4W Settings', 'GC4W Settings', 'manage_options', 'gc4w-settings', array($this, 'display_page'));
     }
 
     function display_page() {
