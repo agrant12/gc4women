@@ -11,9 +11,11 @@
 	include(dirname(__FILE__).'/plugins/carousel/carousel.php');
 	include(dirname(__FILE__).'/plugins/instagram/instagram.php');
 	include(dirname(__FILE__).'/plugins/newsletter/newsletter.php');
-
+	include(dirname(__FILE__).'/plugins/countdown/countdown.php');
+	
 	//Register Widgets
 	register_widget('GC4W_Newsletter_Widget');
+	register_widget('GC4W_Countdown_Widget');
 
 	// Load JS Files
 	add_action('wp_enqueue_scripts', 'load_javascript_files');
