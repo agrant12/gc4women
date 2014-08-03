@@ -54,6 +54,50 @@ function gc4w_custom_post_types(){
 				),
 			)
 		);
+
+	register_post_type('video',
+		array(
+			'labels' => array(
+				'name' => 'Videos',
+				'singular_name' => 'Video'
+				),
+			'menu_position' => 5,
+			'taxonomies' => array('category', 'tags'),
+			'public' => true,
+			'has_archives' => true,
+			'supports' => array(
+				'editor',
+				'excerpt',
+				'custom-fields',
+				'comments',
+				'title',
+				'thumbnail',
+				'category',
+				),
+			)
+		);
+
+	register_post_type('galleries',
+		array(
+			'labels' => array(
+				'name' => 'Galleries',
+				'singular_name' => 'Gallery'
+				),
+			'menu_position' => 5,
+			'taxonomies' => array('category'),
+			'public' => true,
+			'has_archives' => true,
+			'supports' => array(
+				'editor',
+				'excerpt',
+				'custom-fields',
+				'comments',
+				'title',
+				'thumbnail',
+				'category',
+				),
+			)
+		);
 }
 
 add_action('init', 'gc4w_custom_post_types');
