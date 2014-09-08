@@ -151,6 +151,7 @@
 
 		new MultiPostThumbnails(array('label' => 'Secondary Image', 'id' => 'secondary-image', 'post_type' => 'event'));
 		new MultiPostThumbnails(array('label' => 'Secondary Image', 'id' => 'secondary-image', 'post_type' => 'post'));
+		new MultiPostThumbnails(array('label' => 'Secondary Image', 'id' => 'secondary-image', 'post_type' => 'page'));
 	}
 
 	//Widget enabled sidebar

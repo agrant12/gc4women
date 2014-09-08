@@ -36,7 +36,7 @@ function carousel() {
 
 		<div class="flexslider">
 			<ul class="slides">
-				<?php $loop = new WP_Query(array('post_type' => array('event', 'post'), 'post__in' => $slides, 'posts_per_page' => 4)); ?>
+				<?php $loop = new WP_Query(array('post_type' => array('event', 'post', 'page'), 'post__in' => $slides, 'posts_per_page' => 4)); ?>
 				<?php while ($loop->have_posts() ) : $loop->the_post(); ?>
 					<li>
 						<div class="thumbnail">
