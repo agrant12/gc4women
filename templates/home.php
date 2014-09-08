@@ -69,12 +69,28 @@ carousel(); ?>
 		</header>
 		<?php $loop = new WP_Query(array('category_name' => 'news', 'posts_per_page' => 5)); ?>
 		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+			<?php $cat = get_the_category(); ?>
 			<aside>
 				<div class="img"><a class="link" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'carousel'); ?></a></div>
 				<section class="content">
 					<p class="post-date"><?php echo get_the_date(); ?></p>
 					<h2 class="post-title"><?php truncate(get_the_title(), 0, 100); ?></h2>
-					<a class="post-link" href="<?php the_permalink(); ?>">View Article</a>
+					<a class="post-link" href="<?php the_permalink(); ?>">
+					<?php 
+						$view = 'View Article';
+						foreach ($cat as $key => $value) {
+							if ($value->slug == 'gallery') {
+								$view = 'View Gallery';	
+							} else if($value->slug == 'video') {
+								$view = 'View Video';
+							} else if($value->slug == 'champion') {
+								$view = "View Champion";
+							}
+						} 
+
+						echo $view;
+					?>
+					</a>
 					<a class="arrow" href="<?php the_permalink(); ?>">Arrow</a>
 				</section>
 			</aside>
