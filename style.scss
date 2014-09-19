@@ -1305,8 +1305,9 @@ section.news-feed{
 	margin: 30px 0 0 0;
 	ul {
 		float: left;
-		margin: 30px 8px 30px;
+		margin: 10px 8px 10px;
 		padding: 0;
+		position: relative;
 		width: 300px;
 		a {
 			text-decoration: none;
@@ -1327,17 +1328,24 @@ section.news-feed{
 			overflow: hidden;
 			width: 300px;
 		}
-		.learn {
-			width: 100px;
+		.overlay {
+			background-color: #271400;
+			background-color: rgba(39,20,0,0.7);
+			bottom: 0;
+			-ms-filter: "alpha(opacity=80) ";
+			filter: alpha(opacity=80);
+			padding: 0 20px;
+			position: absolute;
+			width: 260px;
+			p {
+				color: white;
+			}
 		}
 		.title {
 			color: $secondary-color;
 			font-size: 16px;
 			font-weight: $font-weight-bold;
 			margin: 5px 0;
-		}
-		.more {
-			display: none;
 		}
 	}
 	h4 {
