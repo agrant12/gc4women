@@ -12,15 +12,8 @@
 </body>
 
 <footer>
-	<nav>
-		<a href="<?php echo esc_url(home_url('/')); ?>">Home</a> | 
-		<a href="<?php echo esc_url(home_url('/about')); ?>">About Us</a> | 
-		<a href="<?php echo esc_url(home_url('/category/programs')); ?>">Programs</a> | 
-		<a href="<?php echo esc_url(home_url('/category/news')); ?>">News</a> | 
-		<a href="<?php echo esc_url(home_url('/category/events')); ?>">Events</a> | 
-		<a href="<?php echo esc_url(home_url('/contact')); ?>">Contact</a>
-	</nav>
-	<p>The Global Connections for Women Foundation is a 501(c)(3) Not-For-Profit Organization | All Rights Reserved.</p>
-	<nav><a href="<?php echo esc_url(home_url('/privacy-policy')); ?>">Privacy Policy</a> | <a target="_blank" href="<?php echo 'http://gc4women.org/sitemap.xml'; ?>">Site Map</a></nav>
+	<?php wp_nav_menu( array('menu' => 'Footer Menu', 'container' => 'nav' )); ?>
+	<p><?php echo esc_html(GC4WSettings::get_setting('footer_text')); ?></p>
+	<?php wp_nav_menu( array('menu' => 'Copyright Menu', 'container' => 'nav' )); ?>
 </footer>
 
