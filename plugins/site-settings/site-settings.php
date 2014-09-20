@@ -85,7 +85,7 @@ class GC4WSettings {
     function admin_init() {
         register_setting('gc4w_settings', 'gc4w_settings');
 
-        // LFM section
+        // Social section
         add_settings_section('gc4w_social', 'Social Settings', array($this, 'section_gc4w_settings'), 'gc4w-settings');
 
         add_settings_field('twitter_url', 'Twitter Url', array($this, 'twitter_url'), 'gc4w-settings', 'gc4w_social');
@@ -93,6 +93,11 @@ class GC4WSettings {
         add_settings_field('pinterest_url', 'Pinterest Url', array($this, 'pinterest_url'), 'gc4w-settings', 'gc4w_social');
         add_settings_field('instagram_url', 'Instagram Url', array($this, 'instagram_url'), 'gc4w-settings', 'gc4w_social');
         add_settings_field('linkedin_url', 'LinkedIn Url', array($this, 'linkedin_url'), 'gc4w-settings', 'gc4w_social');
+
+        add_settings_section('gc4w_footer', 'Copyright Text', array($this, 'section_gc4w_settings'), 'gc4w-settings');
+
+        add_settings_field('footer_text', 'Footer Text', array($this, 'footer_text'), 'gc4w-settings', 'gc4w_footer');
+
 
         // Homepage call to action
         add_settings_section('action_call', 'Call to Action', array($this, 'section_gc4w_settings'), 'gc4w-settings');
@@ -194,6 +199,10 @@ class GC4WSettings {
 
     function donate(){
         echo '<input type="text" size="40" value="'.self::get_setting('donate').'" id="donations" name="gc4w_settings[donate]" />';
+    }
+
+    function footer_text(){
+        echo '<input type="text" size="40" value="'.self::get_setting('footer_text').'" id="donations" name="gc4w_settings[footer_text]" />';
     }
 
     function get_setting($name = '') {
