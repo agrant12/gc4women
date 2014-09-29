@@ -1282,10 +1282,25 @@ section.news-feed{
 /* Programs */
 .programs {
 	margin: 30px 0 0 0;
+	.default {
+		background: url(images/programs-default.png);
+		height: 230px;
+		padding: 10px;
+		width: 280px;
+		p {
+			color: #666;
+			font-size: 11.5px;
+		}
+	}
+	p {
+		padding: 0 8px;
+	}
 	ul {
 		float: left;
-		margin: 30px 8px 30px;
+		height: 250px;
+		margin: 10px 8px 10px;
 		padding: 0;
+		position: relative;
 		width: 300px;
 		a {
 			text-decoration: none;
@@ -1306,8 +1321,18 @@ section.news-feed{
 			overflow: hidden;
 			width: 300px;
 		}
-		.learn {
-			width: 100px;
+		.overlay {
+			background-color: #271400;
+			background-color: rgba(39,20,0,0.7);
+			bottom: 0;
+			-ms-filter: "alpha(opacity=80) ";
+			filter: alpha(opacity=80);
+			padding: 0 20px;
+			position: absolute;
+			width: 260px;
+			p {
+				color: white;
+			}
 		}
 		.title {
 			color: $secondary-color;
@@ -1315,13 +1340,15 @@ section.news-feed{
 			font-weight: $font-weight-bold;
 			margin: 5px 0;
 		}
-		.more {
-			display: none;
-		}
 	}
 	h4 {
-		font-size: 21px;
-		font-style: italic;
+		font-size: 18px;
+		font-style: $font-weight-bold;
+		padding: 0 8px;
+	}
+	.youtube {
+		margin: 25px 0;
+		text-align: center;
 	}
 
 }
