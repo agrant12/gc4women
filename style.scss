@@ -1303,8 +1303,22 @@ section.news-feed{
 /* Programs */
 .programs {
 	margin: 30px 0 0 0;
+	.default {
+		background: url(images/programs-default.png);
+		height: 230px;
+		padding: 10px;
+		width: 280px;
+		p {
+			color: #666;
+			font-size: 11.5px;
+		}
+	}
+	p {
+		padding: 0 8px;
+	}
 	ul {
 		float: left;
+		height: 250px;
 		margin: 10px 8px 10px;
 		padding: 0;
 		position: relative;
@@ -1349,8 +1363,9 @@ section.news-feed{
 		}
 	}
 	h4 {
-		font-size: 21px;
-		font-style: italic;
+		font-size: 18px;
+		font-style: $font-weight-bold;
+		padding: 0 8px;
 	}
 
 }
