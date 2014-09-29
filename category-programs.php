@@ -7,12 +7,14 @@ $category = array('champion', 'campus-program', 'leadership', 'toy-drive');
 get_header(); ?>
 
 <div class="programs">
-	<h4>Welcome to the Global Connections for Women foundation’s program page.</h4>
+	<h4>Welcome to the Global Connections for Women Foundation’s program page.</h4>
 	<p><em><strong>Touching hearts. Lifting spirits. Changing lives.</strong></em>
 	These actions embody the essence of the various programs here at the Global Connections for Women Foundation, where we strive to make real the dream of <em><strong>“improving the lives of women, youth and the communities in which they live.”</strong></em></p>
 	<p>While the world changes around us, the mission and purpose of GC4W remains unwaveringly at the core of our programs and initiatives.  GC4W organizational activities (categorized in the 5 major pillars listed below) are the manifestation of our organizational efforts to connect, educate and empower underserved communities the world over.
 	The following 5 major pillars and the programs within them serve as the foundation for achieving our stated goal of enriching the lives of 100,000 women and youth by the end of 2015.</p>
-	<br />
+	<div class="youtube">
+		<iframe src="//www.youtube.com/embed/bx3nP5AocSE" width="650" height="366" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+	</div>
 	<?php foreach ($category as $key => $cat): ?> 
 		<?php $loop = new WP_Query( array( 
 			'post_type' => Post_Type,

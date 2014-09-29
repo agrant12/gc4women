@@ -106,7 +106,7 @@
 			</li>
 		<?php endif; ?>
 	</ul>
-	    </div><?php
+		</div><?php
 	}
 
 	function donations($args=array()) {
