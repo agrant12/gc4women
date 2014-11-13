@@ -66,9 +66,9 @@ class GC4W_Newsletter_Widget extends WP_Widget {
 		?>
 		<h1><?php echo esc_html($instance['title']); ?></h1>
 		<p><?php echo esc_html($instance['message']); ?></p>
-		<form action="<?php echo esc_url($instance['submit_url']); ?>" method="POST" target="_blank">
-			<input type="email" placeholder="Your Email Address..." name="email" />
-			<input type="submit" value="submit" />
+		<form action="<?php echo esc_url($instance['submit_url']); ?>" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+			<input type="email" value="" name="EMAIL" placeholder="email address" class="email span3"  id="mce-EMAIL" />
+			<input type="submit" value="Submit" name="submit" id="mc-embedded-subscribe" class="btn btn-inverse" />
 		</form>
 		<?php
 		echo $args['after_widget'];
