@@ -40,20 +40,13 @@ class GC4WCarousel {
 		add_settings_section('gc4w_slide', 'Carousel Slides', array($this, 'section_gc4w_carousel'), 'gc4w-carousel');
 
 		for ($i = 1; $i <= self::Slides; $i++) { 
-			global $number;
-			$number = $i;
 			add_settings_field('slide' + $i, 'Slide ' . $i, array($this, 'slide' . $i), 'gc4w-carousel', 'gc4w_slide');
 		}
 
 	}
 
 	private function set_defaults($name = '') {
-		$defaults = array(
-			'slide1' => '',
-			'slide2' => '',
-			'slide3' => '',
-			'slide4' => ''
-		);
+		$defaults = array();
 
 		// if no $name, then this call is to reset all defaults
 		if ( ! $name) {
@@ -88,70 +81,211 @@ class GC4WCarousel {
 
 
 	function section_gc4w_carousel() {}
-	
-	function get_posts() {
-		global $posts;
-		$loop = new WP_Query(array('post_type' => 'post', 'posts_per_page' => 10, 'orderby'=> 'ASC'));
-		$posts = $loop->posts;
-		wp_reset_postdata();
-
-		$posts = $loop;
-
-		echo $posts;
-	}
 
 	function slide1() {
-			$loop = new WP_Query(array('post_type' => 'post,events', 'posts_per_page' => 10, 'orderby'=> 'ASC'));
+			$loop = new WP_Query(array('post_type' => array('post','event','page'), 'posts_per_page' => -1));
 			$posts = $loop->posts;
 			wp_reset_postdata();
+
+			$reg_post = array();
+			$event = array();
+			$page = array();
+			
+			foreach ($posts as $key => $post) {
+				switch ($post->post_type) {
+					case 'post':
+						$reg_posts[] = $post;
+						break;
+					case 'event':
+						$event[] = $post;
+						break;
+					case 'page':
+						$page[] = $post; 
+					default:
+						# code...
+						break;
+				}
+			}
 		?>
 			<select name="gc4w_carousel[slide1]" value="<?php echo self::get_setting('slide1'); ?>">
 				<option value="">-------</option>
-				<?php foreach ($posts as $key => $value): ?>
-					<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide1'), $value->ID); ?>><?php echo $value->post_title; ?></option>
-				<?php endforeach; ?>
+				<?php if(!empty($reg_posts)): ?>
+					<optgroup label="Posts">
+						<?php foreach ($reg_posts as $key => $value): ?>
+								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide1'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+						<?php endforeach; ?>
+					</optgroup>
+				<?php endif; ?>
+				<?php if(!empty($event)): ?>
+					<optgroup label="Events">
+						<?php foreach ($event as $key => $value): ?>
+								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide1'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+						<?php endforeach; ?>
+					</optgroup>
+				<?php endif; ?>
+				<?php if(!empty($page)): ?>
+					<optgroup label="Pages">
+						<?php foreach ($page as $key => $value): ?>
+								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide1'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+						<?php endforeach; ?>
+					</optgroup>
+				<?php endif; ?>
 			</select>
 		<?php
 	}
 
 	function slide2() {
-			$loop = new WP_Query(array('post_type' => 'post,events', 'posts_per_page' => 10, 'orderby'=> 'ASC'));
+			$loop = new WP_Query(array('post_type' => array('post','event','page'), 'posts_per_page' => -1));
 			$posts = $loop->posts;
 			wp_reset_postdata();
+
+			$reg_post = array();
+			$event = array();
+			$page = array();
+			
+			foreach ($posts as $key => $post) {
+				switch ($post->post_type) {
+					case 'post':
+						$reg_posts[] = $post;
+						break;
+					case 'event':
+						$event[] = $post;
+						break;
+					case 'page':
+						$page[] = $post; 
+					default:
+						# code...
+						break;
+				}
+			}
 		?>
 			<select name="gc4w_carousel[slide2]" value="<?php echo self::get_setting('slide2'); ?>">
 				<option value="">-------</option>
-				<?php foreach ($posts as $key => $value): ?>
-					<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide2'), $value->ID); ?>><?php echo $value->post_title; ?></option>
-				<?php endforeach; ?>
+				<?php if(!empty($reg_posts)): ?>
+					<optgroup label="Posts">
+						<?php foreach ($reg_posts as $key => $value): ?>
+								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide2'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+						<?php endforeach; ?>
+					</optgroup>
+				<?php endif; ?>
+				<?php if(!empty($event)): ?>
+					<optgroup label="Events">
+						<?php foreach ($event as $key => $value): ?>
+								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide2'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+						<?php endforeach; ?>
+					</optgroup>
+				<?php endif; ?>
+				<?php if(!empty($page)): ?>
+					<optgroup label="Pages">
+						<?php foreach ($page as $key => $value): ?>
+								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide2'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+						<?php endforeach; ?>
+					</optgroup>
+				<?php endif; ?>
 			</select>
 		<?php
 	}
 
 	function slide3() {
-			$loop = new WP_Query(array('post_type' => 'post,events', 'posts_per_page' => 10, 'orderby'=> 'ASC'));
+			$loop = new WP_Query(array('post_type' => array('post','event','page'), 'posts_per_page' => -1));
 			$posts = $loop->posts;
 			wp_reset_postdata();
+
+			$reg_post = array();
+			$event = array();
+			$page = array();
+			
+			foreach ($posts as $key => $post) {
+				switch ($post->post_type) {
+					case 'post':
+						$reg_posts[] = $post;
+						break;
+					case 'event':
+						$event[] = $post;
+						break;
+					case 'page':
+						$page[] = $post; 
+					default:
+						# code...
+						break;
+				}
+			}
 		?>
 			<select name="gc4w_carousel[slide3]" value="<?php echo self::get_setting('slide3'); ?>">
 				<option value="">-------</option>
-				<?php foreach ($posts as $key => $value): ?>
-					<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide3'), $value->ID); ?>><?php echo $value->post_title; ?></option>
-				<?php endforeach; ?>
+				<?php if(!empty($reg_posts)): ?>
+					<optgroup label="Posts">
+						<?php foreach ($reg_posts as $key => $value): ?>
+								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide3'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+						<?php endforeach; ?>
+					</optgroup>
+				<?php endif; ?>
+				<?php if(!empty($event)): ?>
+					<optgroup label="Events">
+						<?php foreach ($event as $key => $value): ?>
+								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide3'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+						<?php endforeach; ?>
+					</optgroup>
+				<?php endif; ?>
+				<?php if(!empty($page)): ?>
+					<optgroup label="Pages">
+						<?php foreach ($page as $key => $value): ?>
+								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide3'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+						<?php endforeach; ?>
+					</optgroup>
+				<?php endif; ?>
 			</select>
 		<?php
 	}
 
 	function slide4() {
-			$loop = new WP_Query(array('post_type' => 'post,events', 'posts_per_page' => -1, 'orderby'=> 'ASC'));
+			$loop = new WP_Query(array('post_type' => array('post','event','page'), 'posts_per_page' => -1));
 			$posts = $loop->posts;
 			wp_reset_postdata();
+
+			$reg_post = array();
+			$event = array();
+			$page = array();
+			
+			foreach ($posts as $key => $post) {
+				switch ($post->post_type) {
+					case 'post':
+						$reg_posts[] = $post;
+						break;
+					case 'event':
+						$event[] = $post;
+						break;
+					case 'page':
+						$page[] = $post; 
+					default:
+						# code...
+						break;
+				}
+			}
 		?>
 			<select name="gc4w_carousel[slide4]" value="<?php echo self::get_setting('slide4'); ?>">
 				<option value="">-------</option>
-				<?php foreach ($posts as $key => $value): ?>
-					<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide4'), $value->ID); ?>><?php echo $value->post_title; ?></option>
-				<?php endforeach; ?>
+				<?php if(!empty($reg_posts)): ?>
+					<optgroup label="Posts">
+						<?php foreach ($reg_posts as $key => $value): ?>
+								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide4'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+						<?php endforeach; ?>
+					</optgroup>
+				<?php endif; ?>
+				<?php if(!empty($event)): ?>
+					<optgroup label="Events">
+						<?php foreach ($event as $key => $value): ?>
+								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide4'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+						<?php endforeach; ?>
+					</optgroup>
+				<?php endif; ?>
+				<?php if(!empty($page)): ?>
+					<optgroup label="Pages">
+						<?php foreach ($page as $key => $value): ?>
+								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide4'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+						<?php endforeach; ?>
+					</optgroup>
+				<?php endif; ?>
 			</select>
 		<?php
 	}  

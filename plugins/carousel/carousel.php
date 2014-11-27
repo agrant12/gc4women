@@ -9,7 +9,7 @@ Author: Alvin Grant
 Author URI: http://alvingrant.com
 */
 
-include_once 'carousel-settings.php';
+require_once 'carousel-settings.php';
 
 function carousel() {
 
@@ -20,31 +20,34 @@ function carousel() {
 	$slide3 = GC4WCarousel::get_setting('slide3');
 	$slide4 = GC4WCarousel::get_setting('slide4');
 
-	if ($slide1 != '') {
+	if (!empty($slide1)) {
 		$slides[] = $slide1;
 	}
-	if ($slide2 != '') {
+	if (!empty($slide2)) {
 		$slides[] = $slide2;
 	}
-	if ($slide3 != '') {
+	if (!empty($slide3)) {
 		$slides[] = $slide3;
 	}
-	if ($slide4 != '') {
+	if (!empty($slide4)) {
 		$slides[] = $slide4;
 	}
-	?>
+	$post = get_post($slide);
 
+	?>
 		<div class="flexslider">
 			<ul class="slides">
-				<?php $loop = new WP_Query(array('post_type' => array('event', 'post', 'page'), 'post__in' => $slides, 'posts_per_page' => 4)); ?>
-				<?php while ($loop->have_posts() ) : $loop->the_post(); ?>
+				<?php foreach ($slides as $slide) :?>
+					<?php 
+						$post = get_post($slide);
+						$post_type = $post->post_type;
+					?>
 					<li>
 						<div class="thumbnail">
-							<a href="<?php the_permalink(); ?>"><?php MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'carousel-image'); ?></a>
+							<a href="<?php echo get_permalink($slide); ?>"><img src="<?php echo MultiPostThumbnails::get_post_thumbnail_url($post_type, 'secondary-image', $post_id = $slide, 'carousel-image'); ?>" /></a>
 						</div>
 					</li>
-				<?php endwhile; ?>
-				<?php wp_reset_query(); ?>
+				<?php endforeach; ?>
 			</ul>
 		</div>
 		<script type="text/javascript">
@@ -60,7 +63,6 @@ function carousel() {
 				});
 			});
 		</script>
-
 	<?php 
 	}
 ?>
