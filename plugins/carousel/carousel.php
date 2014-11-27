@@ -44,7 +44,7 @@ function carousel() {
 					?>
 					<li>
 						<div class="thumbnail">
-							<a href="<?php echo get_permalink($slide); ?>"><img src="<?php echo MultiPostThumbnails::get_post_thumbnail_url($post_type, 'secondary-image', $post_id = $slide, 'carousel-image'); ?>" /></a>
+							<a href="<?php echo esc_url(get_permalink($slide)); ?>"><img src="<?php echo esc_url(MultiPostThumbnails::get_post_thumbnail_url($post_type, 'secondary-image', $post_id = $slide, 'carousel-image')); ?>" /></a>
 						</div>
 					</li>
 				<?php endforeach; ?>
