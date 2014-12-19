@@ -25,7 +25,7 @@
 			<div class="hamburger"><a href="#">+</a></div>	
 			<a href="<?php echo esc_url(home_url('/')); ?>"><h1 id="site-title"><?php bloginfo('name'); ?></h1></a>
 			<div id="site-description"><?php bloginfo( 'description' ); ?></div>
-			<ul class="social"><?php gc4w_social_widget(); ?><div class="donate"><a href="https://act.myngp.com/Forms/7094584875154736896" target="_blank">Donate to GC4W</a></div></ul>
+			<ul class="social"><?php gc4w_social_widget(); ?><div class="donate"><a href="<?php echo home_url('/donate'); ?>" target="_blank">Donate to GC4W</a></div></ul>
 		</header>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'navigation' ) ); ?>
 		

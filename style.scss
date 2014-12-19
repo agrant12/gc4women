@@ -895,13 +895,8 @@ footer {
 /* Breadcrumbs */
 
 .breadcrumb-trail {
-	span {
-		color: $tertiary-color;
-		font-size: 12px;
-	}
-	span.trail-browse {
-		display: none;
-	}
+	color: $tertiary-color;
+	font-size: 12px;
 }
 
 
