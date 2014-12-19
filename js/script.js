@@ -1,8 +1,4 @@
 jQuery(document).ready(function($){
-	//$('.widget_twitter ul').totemticker({
-	//row_height: '76px',
-	//speed: 1000
-	//});
 
 	var defaultHover = true;
 
@@ -18,7 +14,8 @@ jQuery(document).ready(function($){
 		}
 	});
 
-	$('.select1').on("click", function(e){
+	//@TODO Remove Tab code
+	/*$('.select1').on("click", function(e){
 		e.preventDefault();
 		$('.tab_content_1').toggle();
 	});
@@ -31,6 +28,14 @@ jQuery(document).ready(function($){
 	$('.select3').on("click", function(e){
 		e.preventDefault();
 		$('.tab_content_3').toggle();
+	});*/
+
+	$('.hamburger a').on('click', function(e){
+		e.preventDefault();
+		
+		$('#navigation').slideToggle('fast', function() {
+
+		});
 	});
 });
 

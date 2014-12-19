@@ -1,26 +1,46 @@
-<?php
+<?php 
+
 /**
- * Template Name:  Events
- */
+* Template Name:  Events
+*/
+
+$paged = ( get_query_var('paged') ? get_query_var('paged') : 1);
+
+$args = array(
+	'post_type' => 'event',
+	'posts_per_page' => 10,
+	'paged' => $paged
+);
+
+$loop = new WP_Query($args);
 
 get_header(); ?>
-	<div class="container">
-		<div class="main">
-			<?php $loop = new WP_Query(array('post_type' => 'Events', 'posts_per_page' => 7, 'orderby'=> 'ASC')); ?>
-			<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-				<article>
-					<a class="link" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'category-thumb'); ?></a>
-					<section class="content">
-						<h3><?php truncate(get_the_title(), 0, 25); ?></h3>
-						<p><?php the_excerpt(); ?></p>
-						<p>Event Date: <?php echo esc_html(the_field('date')); ?></p>
-                <p>Ticket Price: <?php echo esc_html(the_field('ticket_price')); ?></p>
-                <p><?php echo the_field('location'); ?></p> 
-					</section>
-				</article>
-			<?php endwhile; ?>
-			<?php wp_reset_query(); ?>
-		</div>        
-		<?php get_sidebar(); ?> 
-    </div>  
+<div class="main">
+	<div class="post">
+		<header>
+			<h1>Events</h1>
+		</header>
+		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+			<aside>
+				<div class="img"><a class="link" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'carousel'); ?></a></div>
+				<section class="content">
+					<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php truncate(get_the_title(), 0, 100); ?></a></h2>
+					<p><?php truncate(get_the_excerpt(), 0, 100); ?></p>
+					<a class="post-link" href="<?php the_permalink(); ?>">Read Article</a>
+					<a class="arrow" href="<?php the_permalink(); ?>">Arrow</a>
+				</section>
+			</aside>
+		<?php endwhile; ?>
+		<?php
+			echo paginate_links( array(
+				'base' => home_url('/events/page/%#%'),
+				'format' => '?paged=%#%',
+				'current' => max( 1, get_query_var('paged') ),
+				'total' => $loop->max_num_pages
+			) );
+		?>
+		<?php wp_reset_postdata(); ?>
+	</div>
+</div>
+<?php get_sidebar(); ?>   
 <?php get_footer(); ?>

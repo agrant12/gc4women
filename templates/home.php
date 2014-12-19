@@ -5,6 +5,20 @@
 
 get_header();
 
+$event_args = array(
+	'post_type' => 'event', 
+	'posts_per_page' => 3
+);
+
+$events = new WP_Query($event_args);
+
+$news_args = array(
+	'category_name' => 'news', 
+	'posts_per_page' => 5
+);
+
+$news = new WP_Query($news_args);
+
 carousel(); ?>
 
 <section class="featured-bucket">
@@ -28,53 +42,45 @@ carousel(); ?>
 		<section class="content">
 			<h3>Donate To The Cause!</h3>
 			<p>The lives we enjoy today are indisputably the result of people who either directly or indirectly influenced who we are and what we do. Here is your chance to influence someone’s life and make an indelible mark on their future.</p>
-			<p class="learn"><a href="<?php echo esc_url(home_url('/donate')); ?>">Learn More <span class="arrow">Arrow</span></a></p>
+			<p class="learn"><a href="https://act.myngp.com/Forms/7094584875154736896" target="_blank">Learn More <span class="arrow">Arrow</span></a></p>
 		</section>
 	</article>
 </section>
 
-<section class="news-feed">
-	<article class="news-container">
-		<header>
-			<h1>Upcoming Events</h1>
-			<a class="arrow" href="<?php echo esc_url(home_url('/category/events')); ?>">Arrow</a><a href="<?php echo esc_url(home_url('/category/events')); ?>">View All Events</a>
-		</header>
-		<?php $loop = new WP_Query(array('post_type' => 'Event', 'scope' => 'upcoming', 'posts_per_page' => 3)); ?>
-		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-			<?php if (strtotime(get_the_date()) > time()): ?>
-				<aside>
+<div class="main">
+	<div class="post">
+		<div class="header-roll">
+			<h3>Upcoming Events</h3>
+			<a class="arrow" href="<?php echo esc_url(home_url('/events')); ?>">Arrow</a><a href="<?php echo esc_url(home_url('/events')); ?>">View All Events</a>
+		</div>
+		<?php while ( $events->have_posts() ) : $events->the_post(); ?>
+				<aside class="home">
 					<div class="img"><a class="link" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'carousel'); ?></a></div>
 					<section class="content">
 						<p class="post-date"><?php echo get_the_date(); ?></p>
-						<h2 class="post-title"><?php truncate(get_the_title(), 0, 100); ?></h2>
+						<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php truncate(get_the_title(), 0, 100); ?></a></h2>
 						<a class="post-link" href="<?php the_permalink(); ?>">View Event</a>
 						<a class="arrow" href="<?php the_permalink(); ?>">Arrow</a>
 					</section>
 				</aside>
-			<?php endif; ?>
+			
 		<?php endwhile; ?>
-		<?php wp_reset_query(); ?>
-	</article>
-</section>
+		<?php wp_reset_postdata(); ?>
+	</div>
 
-<div class="home-sidebar"><?php dynamic_sidebar('frontpage-sidebar'); ?></div>
+	<div class="post">
+		<div class="header-roll">
+			<h3>Latest News</h3>
+			<a class="arrow" href="<?php echo esc_url(home_url('/news')); ?>">Arrow</a><a href="<?php echo esc_url(home_url('/news')); ?>">View All News</a>
+		</div>
 
-<!-- <hr noshade style="width:615px;float:left;border:2px solid #eee;" /> -->
-
-<section class="news-feed">
-	<article class="news-container">
-		<header>
-			<h1>Latest News</h1>
-			<a class="arrow" href="<?php echo esc_url(home_url('/category/news')); ?>">Arrow</a><a href="<?php echo esc_url(home_url('/category/news')); ?>">View All News</a>
-		</header>
-		<?php $loop = new WP_Query(array('category_name' => 'news', 'posts_per_page' => 5)); ?>
-		<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+		<?php while ( $news->have_posts() ) : $news->the_post(); ?>
 			<?php $cat = get_the_category(); ?>
-			<aside>
+			<aside class="home">
 				<div class="img"><a class="link" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'carousel'); ?></a></div>
 				<section class="content">
 					<p class="post-date"><?php echo get_the_date(); ?></p>
-					<h2 class="post-title"><?php truncate(get_the_title(), 0, 100); ?></h2>
+					<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php truncate(get_the_title(), 0, 100); ?></a></h2>
 					<a class="post-link" href="<?php the_permalink(); ?>">
 					<?php 
 						$view = 'View Article';
@@ -87,7 +93,6 @@ carousel(); ?>
 								$view = "View Champion";
 							}
 						} 
-
 						echo $view;
 					?>
 					</a>
@@ -95,7 +100,11 @@ carousel(); ?>
 				</section>
 			</aside>
 		<?php endwhile; ?>
-		<?php wp_reset_query(); ?>
-	</article>
-</section>
+		<?php wp_reset_postdata(); ?>
+	</div>
+</div>
+
+<div class="sidebar">
+	<?php dynamic_sidebar('frontpage-sidebar'); ?>
+</div>
 <?php get_footer(); ?>

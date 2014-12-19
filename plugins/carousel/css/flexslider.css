@@ -1,0 +1,46 @@
+/* Flexslider */
+
+.flexslider {
+	height: 355px;
+	margin-left: -10px !important;
+	width: 970px;
+	.slide_info {
+		background: #000;
+		bottom: 0;
+		display: none;
+		opacity: 0;
+		padding: 10px;
+		position: absolute;
+		width: 100%;
+		.container {
+			margin: 0 auto !important;
+			width: 960px;
+		}
+		.excerpt {
+			color: #fff;
+			font-size: 14px;
+			margin: 0 0 10px 0;
+			position: relative;
+			text-shadow: 1px 1px 1px #111;
+			a {
+				color: #000;
+			}
+			p {
+				clear: both;
+				color: #ffffff;
+				margin: 0;
+			}
+		}
+		.title {
+			clear: both;
+			color: #FBAD1E;
+			font-size: 1.3em;
+			text-shadow: 1px 1px 1px #111;
+		}
+	}
+	.thumbnail {
+		height: 355px;
+		overflow: hidden;
+		width: 970px;
+	}
+}

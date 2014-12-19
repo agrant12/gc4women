@@ -221,4 +221,10 @@
 
 		echo $word;
 	}
+
+	// Rewrite custom post pagination
+	function rewrite(){
+		add_rewrite_rule( 'news/page/([^/]*)/?', 'index.php?pagename=news&paged=$matches[1]', 'top' );
+	}
+	add_action( 'init', 'rewrite');
 ?>

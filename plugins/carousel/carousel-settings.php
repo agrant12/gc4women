@@ -107,26 +107,26 @@ class GC4WCarousel {
 				}
 			}
 		?>
-			<select name="gc4w_carousel[slide1]" value="<?php echo self::get_setting('slide1'); ?>">
+			<select name="gc4w_carousel[slide1]" value="<?php echo esc_attr(self::get_setting('slide1')); ?>">
 				<option value="">-------</option>
 				<?php if(!empty($reg_posts)): ?>
 					<optgroup label="Posts">
 						<?php foreach ($reg_posts as $key => $value): ?>
-								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide1'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+								<option value="<?php echo esc_attr($value->ID); ?>" <?php echo selected(self::get_setting('slide1'), $value->ID); ?>><?php echo esc_html($value->post_title); ?></option>
 						<?php endforeach; ?>
 					</optgroup>
 				<?php endif; ?>
 				<?php if(!empty($event)): ?>
 					<optgroup label="Events">
 						<?php foreach ($event as $key => $value): ?>
-								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide1'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+								<option value="<?php echo esc_attr($value->ID); ?>" <?php echo selected(self::get_setting('slide1'), $value->ID); ?>><?php echo esc_html($value->post_title); ?></option>
 						<?php endforeach; ?>
 					</optgroup>
 				<?php endif; ?>
 				<?php if(!empty($page)): ?>
 					<optgroup label="Pages">
 						<?php foreach ($page as $key => $value): ?>
-								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide1'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+								<option value="<?php echo esc_attr($value->ID); ?>" <?php echo selected(self::get_setting('slide1'), $value->ID); ?>><?php echo esc_html($value->post_title); ?></option>
 						<?php endforeach; ?>
 					</optgroup>
 				<?php endif; ?>
@@ -159,26 +159,26 @@ class GC4WCarousel {
 				}
 			}
 		?>
-			<select name="gc4w_carousel[slide2]" value="<?php echo self::get_setting('slide2'); ?>">
+			<select name="gc4w_carousel[slide2]" value="<?php echo esc_attr(self::get_setting('slide2')); ?>">
 				<option value="">-------</option>
 				<?php if(!empty($reg_posts)): ?>
 					<optgroup label="Posts">
 						<?php foreach ($reg_posts as $key => $value): ?>
-								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide2'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+								<option value="<?php echo esc_attr($value->ID); ?>" <?php echo selected(self::get_setting('slide2'), $value->ID); ?>><?php echo esc_html($value->post_title); ?></option>
 						<?php endforeach; ?>
 					</optgroup>
 				<?php endif; ?>
 				<?php if(!empty($event)): ?>
 					<optgroup label="Events">
 						<?php foreach ($event as $key => $value): ?>
-								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide2'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+								<option value="<?php echo esc_attr($value->ID); ?>" <?php echo selected(self::get_setting('slide2'), $value->ID); ?>><?php echo esc_html($value->post_title); ?></option>
 						<?php endforeach; ?>
 					</optgroup>
 				<?php endif; ?>
 				<?php if(!empty($page)): ?>
 					<optgroup label="Pages">
 						<?php foreach ($page as $key => $value): ?>
-								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide2'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+								<option value="<?php echo esc_attr($value->ID); ?>" <?php echo selected(self::get_setting('slide2'), $value->ID); ?>><?php echo esc_html($value->post_title); ?></option>
 						<?php endforeach; ?>
 					</optgroup>
 				<?php endif; ?>
@@ -211,26 +211,26 @@ class GC4WCarousel {
 				}
 			}
 		?>
-			<select name="gc4w_carousel[slide3]" value="<?php echo self::get_setting('slide3'); ?>">
+			<select name="gc4w_carousel[slide3]" value="<?php echo esc_attr(self::get_setting('slide3')); ?>">
 				<option value="">-------</option>
 				<?php if(!empty($reg_posts)): ?>
 					<optgroup label="Posts">
 						<?php foreach ($reg_posts as $key => $value): ?>
-								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide3'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+								<option value="<?php echo esc_attr($value->ID); ?>" <?php echo selected(self::get_setting('slide3'), $value->ID); ?>><?php echo esc_html($value->post_title); ?></option>
 						<?php endforeach; ?>
 					</optgroup>
 				<?php endif; ?>
 				<?php if(!empty($event)): ?>
 					<optgroup label="Events">
 						<?php foreach ($event as $key => $value): ?>
-								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide3'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+								<option value="<?php echo esc_attr($value->ID); ?>" <?php echo selected(self::get_setting('slide3'), $value->ID); ?>><?php echo esc_html($value->post_title); ?></option>
 						<?php endforeach; ?>
 					</optgroup>
 				<?php endif; ?>
 				<?php if(!empty($page)): ?>
 					<optgroup label="Pages">
 						<?php foreach ($page as $key => $value): ?>
-								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide3'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+								<option value="<?php echo esc_attr($value->ID); ?>" <?php echo selected(self::get_setting('slide3'), $value->ID); ?>><?php echo esc_html($value->post_title); ?></option>
 						<?php endforeach; ?>
 					</optgroup>
 				<?php endif; ?>
@@ -263,26 +263,26 @@ class GC4WCarousel {
 				}
 			}
 		?>
-			<select name="gc4w_carousel[slide4]" value="<?php echo self::get_setting('slide4'); ?>">
+			<select name="gc4w_carousel[slide4]" value="<?php echo esc_attr(self::get_setting('slide4')); ?>">
 				<option value="">-------</option>
 				<?php if(!empty($reg_posts)): ?>
 					<optgroup label="Posts">
 						<?php foreach ($reg_posts as $key => $value): ?>
-								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide4'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+								<option value="<?php echo esc_attr($value->ID); ?>" <?php echo selected(self::get_setting('slide4'), $value->ID); ?>><?php echo esc_html($value->post_title); ?></option>
 						<?php endforeach; ?>
 					</optgroup>
 				<?php endif; ?>
 				<?php if(!empty($event)): ?>
 					<optgroup label="Events">
 						<?php foreach ($event as $key => $value): ?>
-								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide4'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+								<option value="<?php echo esc_attr($value->ID); ?>" <?php echo selected(self::get_setting('slide4'), $value->ID); ?>><?php echo esc_html($value->post_title); ?></option>
 						<?php endforeach; ?>
 					</optgroup>
 				<?php endif; ?>
 				<?php if(!empty($page)): ?>
 					<optgroup label="Pages">
 						<?php foreach ($page as $key => $value): ?>
-								<option value="<?php echo $value->ID; ?>" <?php echo selected(self::get_setting('slide4'), $value->ID); ?>><?php echo $value->post_title; ?></option>
+								<option value="<?php echo esc_attr($value->ID); ?>" <?php echo selected(self::get_setting('slide4'), $value->ID); ?>><?php echo esc_html($value->post_title); ?></option>
 						<?php endforeach; ?>
 					</optgroup>
 				<?php endif; ?>
