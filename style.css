@@ -10,6 +10,8 @@ body, html {
 	height:100%;
 }
 
+/* Global Font Style */
+
 a, h1, h2, h3, h4, h5, h6, p {
 	color:#1A374D;
 	letter-spacing:1px;
@@ -18,6 +20,12 @@ a, h1, h2, h3, h4, h5, h6, p {
 p, li {
 	font-size:12px;
 }
+
+p {
+	margin: 10px 0;
+}
+
+/* Header Style */
 
 header#top-header {
 	padding:10px;
@@ -71,6 +79,8 @@ header#top-header #site-title {
 	text-indent:-5000px;
 	width:340px;
 }
+
+/* Page Structure */
 
 #wrapper {
 	background-color:white;
@@ -229,7 +239,10 @@ header#top-header #site-title {
 	padding-top:7px;
 }
 
-#wrapper .main .post .post-header .author, #wrapper .main .post .post-header .calender, #wrapper .main .post .post-header .comment-bubble, #wrapper .main .post .post-header .tag {
+#wrapper .main .post .post-header .author, 
+#wrapper .main .post .post-header .calender, 
+#wrapper .main .post .post-header .comment-bubble, 
+#wrapper .main .post .post-header .tag {
 	display:block;
 	height:15px;
 	float:left;
