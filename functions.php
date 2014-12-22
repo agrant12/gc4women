@@ -21,7 +21,7 @@
 	function load_javascript_files(){
 		wp_register_script('flexslider', get_template_directory_uri() . '/js/jquery.flexslider-min.js', array('jquery'), '1.7');
 		wp_register_script('tote', get_template_directory_uri() . '/js/jquery.totemticker.min.js', array('jquery'), '1.7');
-		wp_register_script('script', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.7');
+		wp_register_script('script', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.8');
 		wp_enqueue_script('tote');
 		wp_enqueue_script('script');
 		
