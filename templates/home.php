@@ -42,7 +42,7 @@ carousel(); ?>
 		<section class="content">
 			<h3>Donate To The Cause!</h3>
 			<p>The lives we enjoy today are indisputably the result of people who either directly or indirectly influenced who we are and what we do. Here is your chance to influence someone’s life and make an indelible mark on their future.</p>
-			<p class="learn"><a href="https://act.myngp.com/Forms/7094584875154736896" target="_blank">Learn More <span class="arrow">Arrow</span></a></p>
+			<p class="learn"><a href="<?php echo esc_url(home_url('/donate')); ?>">Learn More <span class="arrow">Arrow</span></a></p>
 		</section>
 	</article>
 </section>

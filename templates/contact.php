@@ -38,6 +38,7 @@ get_header(); ?>
 
 <section id="contact">
 	<div id="map-canvas"></div>
+	<?php breadcrumb_trail(); ?>
 	<aside>
 		<h3>Get In Touch</h3>
 
