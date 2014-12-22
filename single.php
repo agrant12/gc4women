@@ -25,9 +25,9 @@ get_header(); ?>
                         echo 'No comments';
                     } else if (!empty($comments)) {
                         if ($comments < 2) {
-                            echo '<span class="comment"></span><a href="' . get_comments_link() .'">' . $comments . ' comment</a>';
+                            echo '<span class="comment-bubble"></span><a href="' . get_comments_link() .'">' . $comments . ' comment</a>';
                         } else {
-                            echo '<span class="comment"></span><a href="' . get_comments_link() .'">' . $comments . ' comments</a>';
+                            echo '<span class="comment-bubble"></span><a href="' . get_comments_link() .'">' . $comments . ' comments</a>';
                         }
                     } 
                 ?>
