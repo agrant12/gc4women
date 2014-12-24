@@ -8,7 +8,7 @@ class GC4W_Newsletter_Widget extends WP_Widget {
 	const WIDGET_ID = 'newsletter';
 
 	function __construct() {
-		$widget_ops = array('description' => 'Displays form for newsletter sign up');
+		$widget_ops = array('description' => 'Displays form for Mailchimp newsletter sign up');
 		$control_ops = array('width' => 308, 'height' => 208);
 		parent::__construct(
 			self::WIDGET_ID,
@@ -17,7 +17,12 @@ class GC4W_Newsletter_Widget extends WP_Widget {
 			$control_ops
 		);
 
-		wp_register_style('paywall', $css_src, array(), '1.0.0');
+		add_action( 'wp_enqueue_scripts', array( $this, 'newsletter_styles' ) );
+	}
+
+	function newsletter_styles() {
+		wp_register_style( 'newsletter', get_bloginfo('stylesheet_directory') . '/plugins/newsletter/css/newsletter.css', array(), '1.0', 'all' );
+		wp_enqueue_style( 'newsletter' );
 	}
 
 	function form($instance) {

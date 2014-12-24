@@ -1,0 +1,40 @@
+.widget_newsletter {
+	height: 125px;
+}
+
+.widget_newsletter h1 {
+	margin: 5px 0;
+}
+
+.widget_newsletter form {
+	width: 100%;
+}
+
+.widget_newsletter input {
+	float: left;
+	height: 20px;
+	margin: 5px 3px;
+	width: 175px;
+}
+
+.widget_newsletter input[type="submit"] {
+	background: #FBAD1E;
+	border: 0;
+	color: #FFF;
+	cursor: pointer;
+	font-size: 0.8em;
+	height: 26px;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: 80px;
+}
+
+.widget_newsletter label {
+	float: left;
+	margin: 5px 0;
+}
+
+.widget_newsletter label p {
+	font-size: 14px;
+	font-weight: bold;
+}
