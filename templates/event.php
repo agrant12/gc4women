@@ -17,7 +17,6 @@ $loop = new WP_Query($args);
 get_header(); ?>
 <div class="main">
 	<div class="post">
-		<?php breadcrumb_trail(); ?>
 		<header>
 			<h1>Events</h1>
 		</header>

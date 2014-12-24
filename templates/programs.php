@@ -6,7 +6,6 @@
 get_header(); ?>
 
 <section class="full">
-	<?php breadcrumb_trail(); ?>
 	<h3>GC4W Programs</h3>
 	<p>Welcome to the Global Connections for Women foundation’s program page…</p>
 

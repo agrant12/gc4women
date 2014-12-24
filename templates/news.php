@@ -9,7 +9,7 @@ $paged = ( get_query_var('paged') ? get_query_var('paged') : 1);
 $args = array(
 	'post_type' => 'post',
 	'category_name' => 'news',
-	'posts_per_page' => 2,
+	'posts_per_page' => 10,
 	'paged' => $paged
 );
 
@@ -18,7 +18,6 @@ $loop = new WP_Query($args);
 get_header(); ?>
 <div class="main">
 	<div class="post">
-		<?php breadcrumb_trail(); ?>
 		<header>
 			<h1>News</h1>
 		</header>
