@@ -106,4 +106,6 @@ carousel();
 <div class="sidebar">
 	<?php dynamic_sidebar('frontpage-sidebar'); ?>
 </div>
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+<script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us5.list-manage.com","uuid":"c62795cc02f512b80877ea1ec","lid":"296cb94ad0"}) })</script>
 <?php get_footer(); ?>

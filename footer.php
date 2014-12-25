@@ -1,7 +1,7 @@
 		<footer>
-			<?php wp_nav_menu( array('menu' => 'Footer Menu', 'container' => 'nav' )); ?>
+			<?php wp_nav_menu( array('menu' => 'Footer Menu', 'container' => 'nav')); ?>
 			<p><?php echo esc_html(GC4WSettings::get_setting('footer_text')); ?></p>
-			<?php wp_nav_menu( array('menu' => 'Copyright Menu', 'container' => 'nav' )); ?>
+			<?php wp_nav_menu( array('menu' => 'Copyright Menu', 'container' => 'nav')); ?>
 		</footer>
 	</div>
 	<?php wp_footer(); ?>
@@ -12,6 +12,7 @@
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 		ga('create', 'UA-51804637-1', 'gc4women.org');
+		ga('require', 'displayfeatures');
 		ga('send', 'pageview');
 
 
@@ -33,7 +34,6 @@
 			qacct:"p-RfbVxdVqDLpWj"
 		});
 	</script>
-
 	<noscript>
 		<div style="display:none;">
 			<img src="//pixel.quantserve.com/pixel/p-RfbVxdVqDLpWj.gif" border="0" height="1" width="1" alt="Quantcast"/>
