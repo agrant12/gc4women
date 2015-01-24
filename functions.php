@@ -227,4 +227,21 @@
 		add_rewrite_rule( 'news/page/([^/]*)/?', 'index.php?pagename=news&paged=$matches[1]', 'top' );
 	}
 	add_action( 'init', 'rewrite');
+
+
+	// Fontello
+	add_action( 'init', 'fontello_icons' );
+
+	function fontello_icons() {
+		wp_register_style( 'fontello-codes', get_bloginfo('stylesheet_directory') . '/css/fontello-codes.css', array(), '1.0', 'all' );
+		wp_register_style( 'fontello-embedded', get_bloginfo('stylesheet_directory') . '/css/fontello-embedded.css', array(), '1.0', 'all' );
+		wp_register_style( 'fontello', get_bloginfo('stylesheet_directory') . '/css/fontello.css', array(), '1.0', 'all' );
+		wp_register_style( 'fontello-ie7-codes', get_bloginfo('stylesheet_directory') . '/css/fontello-ie7-codes.css', array(), '1.0', 'all' );
+		wp_register_style( 'fontello-ie7', get_bloginfo('stylesheet_directory') . '/css/fontello-ie7.css', array(), '1.0', 'all' );
+		wp_enqueue_style( 'fontello-codes' );
+		wp_enqueue_style( 'fontello-embedded' );
+		wp_enqueue_style( 'fontello' );
+		wp_enqueue_style( 'fontello-ie7-codes' );
+		wp_enqueue_style( 'fontello-ie7' );
+	}
 ?>
