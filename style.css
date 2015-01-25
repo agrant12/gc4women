@@ -28,7 +28,8 @@ p {
 /* Header Style */
 
 header#top-header {
-	padding:10px;
+	padding: 0 10px;
+	position: relative;
 }
 
 header#top-header .donate {
@@ -38,8 +39,8 @@ header#top-header .donate {
 	cursor:pointer;
 	float:right;
 	font-size:12px;
-	margin-top:10px;
-	padding:5px;
+	margin-top:43px;
+	padding: 5px 10px;
 	text-decoration:none;
 	text-transform:uppercase;
 	-webkit-transition-duration:200ms;
@@ -78,6 +79,60 @@ header#top-header #site-title {
 	height:75px;
 	text-indent:-5000px;
 	width:340px;
+}
+
+header#top-header .top-bar {
+	background-color: #3b3b3d;
+	height: 40px;
+	width: 100%;
+}
+
+/* Search */
+
+.search {
+	left: 245px;
+	position: relative;
+	top: 45px;
+}
+
+.search:hover {
+	background-color: #FFF;
+}
+
+.search a i.icon-search {
+	color: #000;
+	font-size: 18px;
+	padding: 5px;
+}
+
+.search a i.icon-search:hover {
+	background-color: #1A374D;
+	color: #FFF;
+	padding: 5px;
+}
+
+.search-box {
+	background-color: #1A374D;
+	display: none;
+	padding: 15px;
+	position: absolute;
+	right: 154px;
+	top: 68px;
+	width: 180px;
+}
+
+.search-box label {
+	display: none;
+}
+
+#searchform input {
+	border: 1px solid #666;
+	height: 20px;
+	width: 100%;
+}
+
+#searchform input[type="submit"] {
+	display: none;
 }
 
 /* Page Structure */
@@ -941,13 +996,15 @@ footer p {
 	text-align:center;
 }
 
+/* Social Icons */
+
 .social {
-	float:right;
+	float: right;
 }
 
 .social ul {
-	margin:0 0 0 20px;
-	padding:10px 0;
+	margin: 20px 43px 0 20px;
+	padding: 10px 0;
 }
 
 .social ul li {
@@ -969,47 +1026,37 @@ footer p {
 }
 
 .social ul li a {
-	display:block;
-	height:24px;
-	width:24px;
+	display: block;
+	height: 24px;
+	width: 24px;
 }
 
-.social li.facebook {
-	background:url(images/facebook.png) no-repeat;
+.social ul a {
+	text-decoration: none;
 }
 
-.social li.facebook:hover {
-	background:url(images/facebook-hover.png) no-repeat;
+.social a i {
+	color: #000;
+	font-size: 21px;
 }
 
-.social li.linkedin {
-	background:url(images/linkedin.png) no-repeat;
+.social a i.facebook:hover {
+	color: #3B5998;
 }
 
-.social li.linkedin:hover {
-	background:url(images/linkedin-hover.png) no-repeat;
+.social a i.twitter:hover {
+	color: #4099FF;
 }
 
-.social li.pinterest {
-	background:url(images/pinterest.png) no-repeat;
+.social a i.pinterest:hover {
+	color: #cb2027;
 }
 
-.social li.pinterest:hover {
-	background:url(images/pinterest-hover.png) no-repeat;
+.social a i.linkedin:hover {
+	color: #007bb6;
 }
 
-.social li.twitter {
-	background:url(images/twitter.png) no-repeat;
-}
-
-.social li.twitter:hover {
-	background:url(images/twitter-hover.png) no-repeat;
-}
-
-.social p {
-	float:left;
-	margin:2px;
-}
+/* Featured Bucket */
 
 .featured-bucket {
 	border-bottom:2px solid #EEE;

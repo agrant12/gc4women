@@ -82,30 +82,29 @@
 
 	if(!$facebook_url && !$twitter_url && !$pinterest_url) return false;
 	?>
-	<div class="social">
-	<ul>
-		<p>Stay Connected:</p>
-		<?php if(is_valid_url($facebook_url)): ?>
-			<li class="facebook">
-				<a href="<?php echo $facebook_url; ?>" target="_blank">Facebook</a>
-			</li>
-		<?php endif; ?>
-		<?php if(is_valid_url($twitter_url)): ?>
-			<li class="twitter">
-				<a href="<?php echo $twitter_url; ?>" target="_blank">Twitter</a>
-			</li>
-		<?php endif; ?>
-		<?php if(is_valid_url($pinterest_url)): ?>
-			<li class="pinterest">
-				<a href="<?php echo $pinterest_url; ?>" target="_blank">Pinterest</a>
-			</li>
-		<?php endif; ?>
-		<?php if(is_valid_url($linkedin_url)): ?>
-			<li class="linkedin">
-				<a href="<?php echo $linkedin_url; ?>" target="_blank">Linkedin</a>
-			</li>
-		<?php endif; ?>
-	</ul>
+		<div class="social">
+			<ul>
+				<?php if(is_valid_url($facebook_url)): ?>
+					<a title="GC4Women Facebook" href="<?php echo $facebook_url; ?>" target="_blank">
+						<i class="icon-facebook-squared facebook"></i>
+					</a>
+				<?php endif; ?>
+				<?php if(is_valid_url($twitter_url)): ?>
+					<a title="GC4Women Twitter" href="<?php echo $twitter_url; ?>" target="_blank">
+						<i class="icon-twitter twitter"></i>
+					</a>
+				<?php endif; ?>
+				<?php if(is_valid_url($pinterest_url)): ?>
+					<a title="GC4Women Pinterest" href="<?php echo $pinterest_url; ?>" target="_blank">
+						<i class="icon-pinterest-squared pinterest"></i>
+					</a>
+				<?php endif; ?>
+				<?php if(is_valid_url($linkedin_url)): ?>
+					<a title="GC4Women LinkedIn" href="<?php echo $linkedin_url; ?>" target="_blank">
+						<i class="icon-linkedin-squared linkedin"></i>
+					</a>
+				<?php endif; ?>
+			</ul>
 		</div><?php
 	}
 

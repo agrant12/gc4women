@@ -38,5 +38,26 @@ jQuery(document).ready(function($){
 
 		});
 	});
+
+	// Search Hover
+
+	$('.search, .search-box').on("hover", function(e) {
+		e.preventDefault();
+		$('.search-box').toggle();
+
+		if ($('.search-box').is(':visible')) {
+			$('.icon-search').css({
+				'background-color': '#1A374D'
+			}).css({
+				'color': '#FFF'
+			});
+		} else {
+			$('.icon-search').css({
+				'background-color': '#FFF'
+			}).css({
+				'color': '#000'
+			});
+		}
+	});
 });
 
