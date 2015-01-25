@@ -128,7 +128,8 @@ header#top-header .top-bar {
 #searchform input {
 	border: 1px solid #666;
 	height: 20px;
-	width: 100%;
+	padding: 0 5px;
+	width: 90%;
 }
 
 #searchform input[type="submit"] {
