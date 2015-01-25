@@ -25,7 +25,10 @@
 			<div class="hamburger"><a href="#">+</a></div>	
 			<a href="<?php echo esc_url(home_url('/')); ?>"><h1 id="site-title"><?php bloginfo('name'); ?></h1></a>
 			<div id="site-description"><?php bloginfo( 'description' ); ?></div>
-			<ul class="social"><?php gc4w_social_widget(); ?><div class="donate"><a href="<?php echo home_url('/donate'); ?>">Donate to GC4W</a></div></ul>
+			<div class="donate"><a href="<?php echo home_url('/donate'); ?>">Donate to GC4W</a></div>
+			<span class="search"><a href="#" title="Search"><i class="icon-search"></i></a></span>
+			<ul class="social"><?php gc4w_social_widget(); ?></ul>
+			<div class="search-box"><?php echo get_search_form(); ?></div>
 		</header>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'navigation' ) ); ?>
 		
