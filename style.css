@@ -116,7 +116,7 @@ header#top-header .top-bar {
 	display: none;
 	padding: 15px;
 	position: absolute;
-	right: 154px;
+	right: 151px;
 	top: 68px;
 	width: 180px;
 }
@@ -939,30 +939,64 @@ header#top-header .top-bar {
 }
 
 footer {
-	background:#1A374D;
+	background: #1A374D;
 	box-shadow:0 0 50px rgba(0, 0, 0, 0.1);
 	-webkit-box-shadow:0 0 50px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow:0 0 50px rgba(0, 0, 0, 0.1);
 	border-top:3px solid #FBAD1E;
 	color:#fff;
 	clear:both;
-	height:100px;
 	margin:0 auto;
 	overflow:hidden;
 	padding:20px 0;
 }
 
+footer .address,
+footer .menus,
+footer .social-buttons {
+	float: left;
+	margin: 0 20px;
+}
+
+footer .menus ul.menu {
+	margin: 0 20px;
+	padding: 0;
+}
+
+footer .menus ul.menu li {
+	list-style: none;
+}
+
+footer .menus ul.menu li a {
+	color: white;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+footer .social-buttons .social ul {
+	margin: 0 18px;
+	padding: 0;
+}
+
+footer .social-buttons .social ul a{
+	color: white;
+}
+footer h4 {
+	color: #FBAD1E;
+	font-weight: 500;
+	margin: 10px 20px;
+}
+
 footer nav {
-	display:block;
-	height:20px;
-	margin:15px auto;
+	display: block;
+	height: 20px;
+	width: 300px;
 }
 
 footer nav ul {
-	padding:0;
-	position:relative;
-	text-align:center;
-	white-space:nowrap;
+	padding: 0;
+	position: relative;
+	white-space: nowrap;
 }
 
 footer nav ul li {
@@ -992,9 +1026,9 @@ footer nav ul li:last-child {
 }
 
 footer p {
-	color:#FBAD1E;
-	font-size:12px;
-	text-align:center;
+	color: #FFF;
+	font-size: 12px;
+	margin: 0 20px;
 }
 
 /* Social Icons */
