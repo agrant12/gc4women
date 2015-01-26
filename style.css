@@ -1004,7 +1004,7 @@ footer p {
 }
 
 .social ul {
-	margin: 20px 43px 0 20px;
+	margin: -1px 43px 0 20px;
 	padding: 10px 0;
 }
 
@@ -1057,6 +1057,9 @@ footer p {
 	color: #007bb6;
 }
 
+.social a i.instagram:hover {
+	color: #c08d64;
+}
 /* Featured Bucket */
 
 .featured-bucket {
