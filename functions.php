@@ -70,6 +70,7 @@
 			'twitter_url' => esc_url(GC4WSettings::get_setting('twitter_url')),
 			'pinterest_url' => esc_url(GC4WSettings::get_setting('pinterest_url')),
 			'linkedin_url' => esc_url(GC4WSettings::get_setting('linkedin_url')),
+			'instagram_url' => esc_url(GC4WSettings::get_setting('instagram_url')),
 		), $args);
 
 		if(empty($label)){
@@ -79,8 +80,9 @@
 		$twitter_url = $args['twitter_url'];
 		$pinterest_url = $args['pinterest_url'];
 		$linkedin_url = $args['linkedin_url'];
+		$instagram_url = $args['instagram_url'];
 
-	if(!$facebook_url && !$twitter_url && !$pinterest_url) return false;
+	if(!$facebook_url && !$twitter_url && !$pinterest_url && !$instagram_url) return false;
 	?>
 		<div class="social">
 			<ul>
@@ -94,14 +96,19 @@
 						<i class="icon-twitter twitter"></i>
 					</a>
 				<?php endif; ?>
-				<?php if(is_valid_url($pinterest_url)): ?>
-					<a title="GC4Women Pinterest" href="<?php echo $pinterest_url; ?>" target="_blank">
-						<i class="icon-pinterest-squared pinterest"></i>
+				<?php if(is_valid_url($instagram_url)): ?>
+					<a title="GC4Women Instagram" href="<?php echo $instagram_url; ?>" target="_blank">
+						<i class="icon-instagramm instagram"></i>
 					</a>
 				<?php endif; ?>
 				<?php if(is_valid_url($linkedin_url)): ?>
 					<a title="GC4Women LinkedIn" href="<?php echo $linkedin_url; ?>" target="_blank">
 						<i class="icon-linkedin-squared linkedin"></i>
+					</a>
+				<?php endif; ?>
+				<?php if(is_valid_url($pinterest_url)): ?>
+					<a title="GC4Women Pinterest" href="<?php echo $pinterest_url; ?>" target="_blank">
+						<i class="icon-pinterest-squared pinterest"></i>
 					</a>
 				<?php endif; ?>
 			</ul>
