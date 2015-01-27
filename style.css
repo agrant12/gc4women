@@ -978,9 +978,10 @@ footer .social-buttons .social ul {
 	padding: 0;
 }
 
-footer .social-buttons .social ul a{
-	color: white;
+footer .social-buttons .social ul a i{
+	font-size: 21px;
 }
+
 footer h4 {
 	color: #FBAD1E;
 	font-weight: 500;
@@ -1015,6 +1016,10 @@ footer nav ul li a {
 	text-align:center;
 	text-decoration:none;
 	text-transform:uppercase;
+}
+
+footer .menus ul.menu li a:hover {
+	text-decoration: underline;
 }
 
 footer nav ul li a:hover {

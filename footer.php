@@ -9,7 +9,7 @@
 				</p>
 				<br />
 				<p>
-					Email: info@gc4women.org<br />
+					Email: <a href="mailto:info@gc4women.org">info@gc4women.org</a><br />
 					Phone: 1-800-000-0000
 				</p>
 			</div>
@@ -23,6 +23,9 @@
 				<h4>Follow Us</h4>
 				<br />
 				<?php gc4w_social_widget(); ?>
+			</div>
+			<div class="newsletter">
+				
 			</div>
 
 			<!--<p><?php echo esc_html(GC4WSettings::get_setting('footer_text')); ?></p>-->
