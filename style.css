@@ -141,7 +141,7 @@ header#top-header .top-bar {
 #wrapper {
 	background-color:white;
 	margin:0 auto;
-	width:970px;
+	width:1000px;
 }
 
 #wrapper .main {
@@ -149,7 +149,7 @@ header#top-header .top-bar {
 	height:100%;
 	margin-bottom:100px;
 	margin:15px 0 15px 15px;
-	width:635px;
+	width: 610px;
 }
 
 #wrapper .main .navigation {
@@ -799,8 +799,8 @@ header#top-header .top-bar {
 }
 
 .sidebar-home {
-	margin: 30px 2px;
-	width: 270px;
+	margin: 30px 35px 0 0;
+	width: 300px;
 }
 
 .sidebar aside {
@@ -1074,12 +1074,12 @@ footer p {
 }
 
 .featured-bucket article {
-	float:left;
-	margin:20px 0;
-	position:relative;
-	overflow:hidden;
-	text-align:center;
-	width:315px;
+	float: left;
+	margin: 20px 0px 5px 21px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	width: 300px;
 }
 
 .featured-bucket article a {
@@ -1473,6 +1473,10 @@ html[xmlns] .slides {display: block;}
 	width: 100% !important;
 }
 
+#wrapper .main .home section.content {
+	width: 165px;
+}
+
 /* Homepage Events */
 .events {
 
@@ -1484,17 +1488,47 @@ html[xmlns] .slides {display: block;}
 	text-transform: uppercase;
 }
 
-.events .thumbnail img {
-	height: 160px;
-	margin-top: 13px;
+.events p {
+	margin: 5px 0;
+}
+
+.events .css-locations-list ul li,
+.events .css-locations-list ul li a {
+	font-size: 11px;
+}
+
+.events .css-locations-list ul li a {
+	font-weight: bold;
+	text-decoration: none;
+} 
+
+.events .title {
+	font-weight: bold;
+}
+
+.events .location {
 	width: 250px;
+}
+
+.events .location ul {
+	margin: 0;
+	list-style: none;
+	padding: 0;
+}
+
+.events .thumbnail img {
+	background: #ccc;
+	height: 173px;
+	margin-top: 14px;
+	padding: 10px;
+	width: 270px;
 }
 
 /* Homepage Slider */
 .news-flex {
 	float: left;
 	position: relative;
-	width: 650px;
+	width: 595px;
 }
 
 .news-flex .flex-control-nav {

@@ -4,7 +4,7 @@ get_header();
 
 $event_args = array(
 	'post_type' => 'event', 
-	'posts_per_page' => 1
+	'posts_per_page' => 2
 );
 
 $events = new WP_Query($event_args);
@@ -102,39 +102,19 @@ carousel();
 			</div>
 		<?php endif; ?>
 	</div>
-
-	<!--<div class="post events">
-		<div class="header-roll">
-			<h3>Upcoming Events</h3>
-			<a class="arrow" href="<?php echo esc_url(home_url('/events')); ?>">Arrow</a><a href="<?php echo esc_url(home_url('/events')); ?>">View All Events</a>
-		</div>
-		<?php while ( $events->have_posts() ) : $events->the_post(); ?>
-				<aside class="home">
-					<div class="img"><a class="link" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'carousel'); ?></a></div>
-					<section class="content">
-						<p class="post-date"><?php echo get_the_date(); ?></p>
-						<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php truncate(get_the_title(), 0, 100); ?></a></h2>
-						<a class="post-link" href="<?php the_permalink(); ?>">View Event</a>
-						<a class="arrow" href="<?php the_permalink(); ?>">Arrow</a>
-					</section>
-				</aside>
-			
-		<?php endwhile; ?>
-		<?php wp_reset_postdata(); ?>
-	</div>-->
 </div>
 
 <div class="sidebar sidebar-home">
 	<div class="events">
 		<h3>Upcoming Events</h3>
 		<?php while ($events->have_posts()) : $events->the_post(); ?>
-			<div class="thumbnail"><a href=""><?php the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'carousel'); ?></a></div>
-			<div><?php truncate(get_the_title(), 0, 100); ?></div>
-			<div><?php echo get_the_date(); ?></div>
+			<div class="thumbnail"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'carousel'); ?></a></div>
+			<div class="title"><p><a href="<?php the_permalink(); ?>"><?php truncate(get_the_title(), 0, 100); ?></a></p></div>
+			<div class="date"><p><?php echo get_the_date(); ?></p></div>
+			<!--<div class="location"><?php echo do_shortcode('[locations_list]'); ?></div>-->
 		<?php endwhile; ?>
 		<?php wp_reset_postdata(); ?>
 	</div>
-	<!--<?php dynamic_sidebar('frontpage-sidebar'); ?>-->
 </div>
 <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 <script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us5.list-manage.com","uuid":"c62795cc02f512b80877ea1ec","lid":"296cb94ad0"}) })</script>
