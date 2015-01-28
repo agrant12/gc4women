@@ -4,14 +4,14 @@ get_header();
 
 $event_args = array(
 	'post_type' => 'event', 
-	'posts_per_page' => 3
+	'posts_per_page' => 1
 );
 
 $events = new WP_Query($event_args);
 
 $news_args = array(
 	'category_name' => 'news', 
-	'posts_per_page' => 5
+	'posts_per_page' => 4
 );
 
 $news = new WP_Query($news_args);
@@ -49,6 +49,62 @@ carousel();
 <div class="main">
 	<div class="post">
 		<div class="header-roll">
+			<h3>Latest News</h3>
+			<a href="<?php echo esc_url(home_url('/news')); ?>">View All News</a>
+		</div>
+
+		<?php if (!empty($news)): ?>
+			<div id="news-flex" class="news-flex">
+				<ul class="slides">
+					<?php while ( $news->have_posts() ) : $news->the_post(); ?>
+						<li>
+						<?php $cat = get_the_category(); ?>
+						<aside class="home">
+							<div class="img"><a class="link" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'carousel'); ?></a></div>
+							<section class="content">
+								<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php truncate(get_the_title(), 0, 100); ?></a></h2>
+								<p><?php truncate(get_the_content(), 0, 200); ?></p>
+								<a class="post-link" href="<?php the_permalink(); ?>">
+									<?php 
+										$view = 'View Article';
+										foreach ($cat as $key => $value) {
+											if ($value->slug == 'gallery') {
+												$view = 'View Gallery';	
+											} else if($value->slug == 'video') {
+												$view = 'View Video';
+											} else if($value->slug == 'champion') {
+												$view = "View Champion";
+											}
+										} 
+										echo $view;
+									?>
+								</a>
+							</section>
+						</aside>
+						</li>
+					<?php 
+						endwhile;
+						wp_reset_postdata();
+					?>
+				</ul>
+				<script type="text/javascript">
+					jQuery(document).ready(function($){
+						$('#news-flex').flexslider({
+							animation: "slide",
+							animationLoop: true,
+							animationSpeed: 500, 
+							maxItems: 4,
+							pauseOnHover: true,
+							slideshowSpeed: 7000,
+						});
+					});
+				</script>
+			</div>
+		<?php endif; ?>
+	</div>
+
+	<!--<div class="post events">
+		<div class="header-roll">
 			<h3>Upcoming Events</h3>
 			<a class="arrow" href="<?php echo esc_url(home_url('/events')); ?>">Arrow</a><a href="<?php echo esc_url(home_url('/events')); ?>">View All Events</a>
 		</div>
@@ -65,46 +121,20 @@ carousel();
 			
 		<?php endwhile; ?>
 		<?php wp_reset_postdata(); ?>
-	</div>
+	</div>-->
+</div>
 
-	<div class="post">
-		<div class="header-roll">
-			<h3>Latest News</h3>
-			<a class="arrow" href="<?php echo esc_url(home_url('/news')); ?>">Arrow</a><a href="<?php echo esc_url(home_url('/news')); ?>">View All News</a>
-		</div>
-
-		<?php while ( $news->have_posts() ) : $news->the_post(); ?>
-			<?php $cat = get_the_category(); ?>
-			<aside class="home">
-				<div class="img"><a class="link" href="<?php the_permalink(); ?>"><?php the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'carousel'); ?></a></div>
-				<section class="content">
-					<p class="post-date"><?php echo get_the_date(); ?></p>
-					<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php truncate(get_the_title(), 0, 100); ?></a></h2>
-					<a class="post-link" href="<?php the_permalink(); ?>">
-					<?php 
-						$view = 'View Article';
-						foreach ($cat as $key => $value) {
-							if ($value->slug == 'gallery') {
-								$view = 'View Gallery';	
-							} else if($value->slug == 'video') {
-								$view = 'View Video';
-							} else if($value->slug == 'champion') {
-								$view = "View Champion";
-							}
-						} 
-						echo $view;
-					?>
-					</a>
-					<a class="arrow" href="<?php the_permalink(); ?>">Arrow</a>
-				</section>
-			</aside>
+<div class="sidebar sidebar-home">
+	<div class="events">
+		<h3>Upcoming Events</h3>
+		<?php while ($events->have_posts()) : $events->the_post(); ?>
+			<div class="thumbnail"><a href=""><?php the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'carousel'); ?></a></div>
+			<div><?php truncate(get_the_title(), 0, 100); ?></div>
+			<div><?php echo get_the_date(); ?></div>
 		<?php endwhile; ?>
 		<?php wp_reset_postdata(); ?>
 	</div>
-</div>
-
-<div class="sidebar">
-	<?php dynamic_sidebar('frontpage-sidebar'); ?>
+	<!--<?php dynamic_sidebar('frontpage-sidebar'); ?>-->
 </div>
 <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 <script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us5.list-manage.com","uuid":"c62795cc02f512b80877ea1ec","lid":"296cb94ad0"}) })</script>
