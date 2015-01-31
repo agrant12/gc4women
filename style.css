@@ -212,6 +212,10 @@ header#top-header .top-bar {
 	text-decoration: none;
 }
 
+#wrapper .main .post aside .content .post-link:hover {
+	background-color: #1A374D;
+}
+
 #wrapper .main .post aside .content .post-title a {
 	color:#1A374D;
 	text-decoration:none;
@@ -258,7 +262,7 @@ header#top-header .top-bar {
 
 #wrapper .main .post .header-roll a {
 	float:right;
-	font-size:11px;
+	font-size: 10px;
 	margin:6px 0;
 	text-decoration:none;
 	text-transform:uppercase;
@@ -1477,12 +1481,33 @@ html[xmlns] .slides {display: block;}
 	width: 165px;
 }
 
+/* Twitter Block */
+
+.twitter-block {
+	height: 150px;
+	margin: 15px 0;
+	width: 595px;
+}
+
+.twitter-block .icon-twitter {
+	color: #4099FF;
+	font-size: 55px;
+}
 /* Homepage Events */
 .events {
 
 }
 
+.events a.view-all {
+	float: right;
+font-size: 10px;
+margin: 6px 0;
+text-decoration: none;
+text-transform: uppercase;
+}
+
 .events h3 {
+	float: left;
 	font-size: 1.0em;
 	margin: 2px 0;
 	text-transform: uppercase;
@@ -1526,7 +1551,6 @@ html[xmlns] .slides {display: block;}
 
 /* Homepage Slider */
 .news-flex {
-	float: left;
 	position: relative;
 	width: 595px;
 }

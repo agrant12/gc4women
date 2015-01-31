@@ -4,7 +4,7 @@ get_header();
 
 $event_args = array(
 	'post_type' => 'event', 
-	'posts_per_page' => 2
+	'posts_per_page' => 1
 );
 
 $events = new WP_Query($event_args);
@@ -50,7 +50,7 @@ carousel();
 	<div class="post">
 		<div class="header-roll">
 			<h3>Latest News</h3>
-			<a href="<?php echo esc_url(home_url('/news')); ?>">View All News</a>
+			<a href="<?php echo esc_url(home_url('/news')); ?>">All News</a>
 		</div>
 
 		<?php if (!empty($news)): ?>
@@ -101,12 +101,22 @@ carousel();
 				</script>
 			</div>
 		<?php endif; ?>
+		<div id"social-block">
+			<h3>Connect with Us!</h3>
+			<div class="twitter-block">
+				<i class="icon-twitter twitter"></i>
+				<div class="twitter-feed">
+					<a href="#">Follow Us on Twitter</a>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
 <div class="sidebar sidebar-home">
 	<div class="events">
-		<h3>Upcoming Events</h3>
+		<h3 class="title">Upcoming Events</h3>
+		<a class="view-all" href="<?php echo esc_url(home_url('/events')); ?>">All Events</a>
 		<?php while ($events->have_posts()) : $events->the_post(); ?>
 			<div class="thumbnail"><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(get_post_type(), 'secondary-image', NULL, 'carousel'); ?></a></div>
 			<div class="title"><p><a href="<?php the_permalink(); ?>"><?php truncate(get_the_title(), 0, 100); ?></a></p></div>
