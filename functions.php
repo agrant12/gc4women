@@ -11,6 +11,7 @@
 	include(dirname(__FILE__).'/plugins/carousel/carousel.php');
 	include(dirname(__FILE__).'/plugins/instagram/instagram.php');
 	include(dirname(__FILE__).'/plugins/newsletter/newsletter.php');
+	include(dirname(__FILE__).'/plugins/twitter/twitter.php');
 
 	//Register Widgets
 	register_widget('GC4W_Newsletter_Widget');

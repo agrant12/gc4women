@@ -107,6 +107,7 @@ carousel();
 				<i class="icon-twitter twitter"></i>
 				<div class="twitter-feed">
 					<a href="#">Follow Us on Twitter</a>
+					<?php get_timeline(); ?>
 				</div>
 			</div>
 		</div>
