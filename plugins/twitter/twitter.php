@@ -22,11 +22,13 @@ function get_timeline() {
 					->buildOauth($url, $requestMethod)
 					->performRequest()
 				);
-	
-	foreach ($tweets as $tweet) {
-		echo $tweet->text;
+	if (!empty($tweets)) {
+		foreach ($tweets as $tweet) {
+			echo $tweet->text;
+		}
+	} else {
+		echo 'There was an error in the feed. Please Try again.';
 	}
-
 }
 
 ?>
