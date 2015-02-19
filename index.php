@@ -4,7 +4,7 @@ get_header();
 
 $event_args = array(
 	'post_type' => 'event', 
-	'posts_per_page' => 2
+	'posts_per_page' => 1
 );
 
 $events = new WP_Query($event_args);
@@ -110,9 +110,6 @@ carousel();
 					<a href="#">Follow Us on Twitter</a>
 				</div>
 			</div>
-			<div class="newsletter">
-				<h4>Newsletter Sign-up</h4>
-			</div>
 		</div>
 	</div>
 </div>
@@ -129,6 +126,9 @@ carousel();
 		<?php endwhile; ?>
 		<?php wp_reset_postdata(); ?>
 	</div>
+</div>
+<div class="newsletter">
+	<h4>Newsletter Sign-up</h4>
 </div>
 <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
 <script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us5.list-manage.com","uuid":"c62795cc02f512b80877ea1ec","lid":"296cb94ad0"}) })</script>
