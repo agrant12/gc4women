@@ -11,6 +11,8 @@
 	include(dirname(__FILE__).'/plugins/carousel/carousel.php');
 	include(dirname(__FILE__).'/plugins/instagram/instagram.php');
 	include(dirname(__FILE__).'/plugins/newsletter/newsletter.php');
+	include(dirname(__FILE__).'/plugins/twitter/twitter.php');
+	//include(dirname(__FILE__).'/plugins/facebook/facebook.php');
 
 	//Register Widgets
 	register_widget('GC4W_Newsletter_Widget');
@@ -24,10 +26,7 @@
 		wp_register_script('script', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.8');
 		wp_enqueue_script('tote');
 		wp_enqueue_script('script');
-		
-		if(is_front_page()){
-			wp_enqueue_script('flexslider');
-		}
+		wp_enqueue_script('flexslider');
 	}
 
 	// Check if url is valid
