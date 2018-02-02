@@ -1,7 +1,34 @@
 		<footer>
-			<?php wp_nav_menu( array('menu' => 'Footer Menu', 'container' => 'nav')); ?>
-			<p><?php echo esc_html(GC4WSettings::get_setting('footer_text')); ?></p>
-			<?php wp_nav_menu( array('menu' => 'Copyright Menu', 'container' => 'nav')); ?>
+			<div class="address">
+				<h4>Contact Us</h4>
+				<br />
+				<p>
+					Global Connections For Women<br />
+					P.O. Box 1143<br/>
+					New York, NY 10156
+				</p>
+				<br />
+				<p>
+					Email: <a href="mailto:info@gc4women.org">info@gc4women.org</a><br />
+					Phone: 1-800-000-0000
+				</p>
+			</div>
+			<div class="menus">
+				<h4>Menu</h4>
+				<br />
+				<?php wp_nav_menu( array('menu' => 'Footer Menu', 'container' => 'div')); ?>
+				<?php wp_nav_menu( array('menu' => 'Copyright Menu', 'container' => 'div')); ?>
+			</div>
+			<div class="social-buttons">
+				<h4>Follow Us</h4>
+				<br />
+				<?php gc4w_social_widget(); ?>
+			</div>
+			<div class="newsletter">
+				
+			</div>
+
+			<!--<p><?php echo esc_html(GC4WSettings::get_setting('footer_text')); ?></p>-->
 		</footer>
 	</div>
 	<?php wp_footer(); ?>
